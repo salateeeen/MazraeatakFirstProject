@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./OTPinput.module.css";
 
-export default function OTPinput({ OTPlength = 6, onSubmit }) {
+export default function OTPinput({ OTPlength = 6, onSubmit, disabled = false }) {
   const [otp, setOtp] = useState(Array.from({ length: OTPlength }).fill(""));
   const inputRefs = useRef([]);
 
@@ -45,7 +45,8 @@ export default function OTPinput({ OTPlength = 6, onSubmit }) {
       {otp.map((value, i) => {
         return (
           <input
-            className={styles.input}
+            disabled={disabled}
+            className={`${styles.input} ${disabled ? styles.disabled : ""}`}
             key={i}
             ref={(input) => (inputRefs.current[i] = input)}
             type="text"

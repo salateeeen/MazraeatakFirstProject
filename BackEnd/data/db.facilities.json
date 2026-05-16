@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "69f105a600765c357bcaa85e"
+  },
+  "name": "View",
+  "logo": "🌄"
+},
+{
+  "_id": {
+    "$oid": "69f105a600765c357bcaa85f"
+  },
+  "name": "Pool",
+  "logo": "🏊"
+},
+{
+  "_id": {
+    "$oid": "69f105a600765c357bcaa860"
+  },
+  "name": "Barbecue",
+  "logo": "🍖"
+},
+{
+  "_id": {
+    "$oid": "69f105a600765c357bcaa861"
+  },
+  "name": "Billiards",
+  "logo": "🎱"
+},
+{
+  "_id": {
+    "$oid": "69f105a600765c357bcaa862"
+  },
+  "name": "Playground",
+  "logo": "🛝"
+},
+{
+  "_id": {
+    "$oid": "69f105a600765c357bcaa863"
+  },
+  "name": "Table Tennis",
+  "logo": "🏓"
+},
+{
+  "_id": {
+    "$oid": "69f105a600765c357bcaa864"
+  },
+  "name": "Sound System",
+  "logo": "🔊"
+},
+{
+  "_id": {
+    "$oid": "69f105a600765c357bcaa865"
+  },
+  "name": "Football Field",
+  "logo": "⚽"
+}]

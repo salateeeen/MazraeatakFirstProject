@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "69f105b300765c357bcaa868"
+  },
+  "name": "Ajloun",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/ajloun_q8amtv.webp"
+},
+{
+  "_id": {
+    "$oid": "69f105b300765c357bcaa869"
+  },
+  "name": "Amman",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/amman_gpxpbf.jpg"
+},
+{
+  "_id": {
+    "$oid": "69f105b300765c357bcaa86a"
+  },
+  "name": "Dead Sea",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/deadsea_p8reoj.png"
+},
+{
+  "_id": {
+    "$oid": "69f105b300765c357bcaa86b"
+  },
+  "name": "Irbid",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/irbid_tqd9lj.jpg"
+},
+{
+  "_id": {
+    "$oid": "69f105b300765c357bcaa86c"
+  },
+  "name": "Jerash",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/jerash_vwrsp1.jpg"
+},
+{
+  "_id": {
+    "$oid": "69f105b300765c357bcaa86d"
+  },
+  "name": "Petra",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/petra_kgjqbg.jpg"
+},
+{
+  "_id": {
+    "$oid": "69f105b300765c357bcaa86e"
+  },
+  "name": "Wadi Rum",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/wadirum_xuksyg.jpg"
+},
+{
+  "_id": {
+    "$oid": "69f105b300765c357bcaa86f"
+  },
+  "name": "Zarqa",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/zarqa_jk3lbd.jpg"
+}]

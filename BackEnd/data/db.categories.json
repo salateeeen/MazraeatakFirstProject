@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "69f11ff23d7b6c9910e7b21f"
+  },
+  "name": "for events",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1775170986/categories/auoblddz1m2jlhrg9f0x.jpg"
+},
+{
+  "_id": {
+    "$oid": "69f11ff23d7b6c9910e7b220"
+  },
+  "name": "for families",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1775170970/categories/p5bmwgpdffrbljmiarls.jpg"
+},
+{
+  "_id": {
+    "$oid": "69f11ff23d7b6c9910e7b221"
+  },
+  "name": "for youths",
+  "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1775170953/categories/wkkhmbswimqbyv0jbxq1.jpg"
+}]

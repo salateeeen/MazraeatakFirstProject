@@ -66,7 +66,13 @@ cd MazraeatakFirstProject
 1. Navigate to the `BackEnd` directory: `cd BackEnd`
 2. Install dependencies: `npm install`
 3. Create a `config.env` file based on `config.env.example` and add your credentials.
-4. Run the development server: `npm run dev`
+4. **Database Seeding (Important)**:
+   To see the app with full data (cities, categories, facilities), you need to import the JSON files from `BackEnd/data/` into your MongoDB:
+   - Open **MongoDB Compass**.
+   - Connect to your database.
+   - For each collection (`cities`, `categories`, `facilities`), click **Add Data** -> **Import JSON/CSV file**.
+   - Select the corresponding file from `BackEnd/data/` (e.g., `db.cities.json` -> `cities` collection).
+5. Run the development server: `npm run dev`
 
 ### 3. Frontend Setup
 1. Navigate to the `FrontEnd` directory: `cd FrontEnd`

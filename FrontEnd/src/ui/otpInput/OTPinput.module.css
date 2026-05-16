@@ -21,3 +21,10 @@
 .input:focus {
     box-shadow: 0 0 0 2px var(--accent-soft);
 }
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: var(--surface-raised);
+    border-color: var(--border-subtle);
+}
