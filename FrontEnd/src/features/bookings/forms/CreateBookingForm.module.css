@@ -1,0 +1,135 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xl);
+
+    background-color: var(--surface-panel);
+    box-shadow: 0 12px 28px var(--shadow-medium);
+    padding: var(--pad-2xl);
+    border-radius: var(--radius-lg);
+}
+
+.formCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    transition: all 0.3s ease;
+}
+
+.dateWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+}
+
+.formContainer label {
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--text-body);
+}
+
+.dateBtn {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+
+    padding: var(--pad-md) var(--pad-lg);
+    border: 1px solid var(--border-input);
+    border-radius: var(--radius-md);
+
+    background: var(--surface-input);
+    color: var(--text-heading);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.dateBtn:hover {
+    background: var(--surface-input-active);
+    transform: translateY(-2px);
+}
+
+.formContainer input {
+    min-height: 40px;
+}
+
+.slotGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-md);
+}
+
+.slotCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-sm);
+
+    padding: var(--pad-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-input);
+    
+    background: var(--surface-raised);
+    color: var(--text-heading);
+
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.slotCard:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-stronger);
+}
+
+.slotCard:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.active {
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
+.modalLayout {
+    position: fixed;
+    inset: 0;
+    background: var(--overlay-backdrop);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-modal);
+}
+
+.modalContent {
+    background: var(--surface-card);
+    padding: var(--pad-2xl);
+    border-radius: var(--radius-xl);
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    border: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 1100px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: var(--gap-xl);
+    }
+
+    .summaryCard {
+        position: relative;
+        top: 0;
+    }
+
+    .slotGrid {
+        grid-template-columns: 1fr;
+    }
+}

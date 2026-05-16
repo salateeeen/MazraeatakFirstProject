@@ -1,0 +1,67 @@
+/* Local layout: mirrors FarmPricing (card, title, blocks, block, slots, slot, price) */
+.card {
+  padding: var(--pad-xl);
+  background: var(--surface-panel);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 28px var(--shadow-default);
+}
+
+.title {
+  width: 50%;
+  height: 28px;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.blockTitle {
+  width: 45%;
+  height: 20px;
+  border-radius: var(--radius-sm);
+}
+
+.slots {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+.slot {
+  background: var(--surface-card);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+
+.slotLabel {
+  width: 60%;
+  height: 18px;
+  border-radius: var(--radius-sm);
+}
+
+.slotPrice {
+  width: 56px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 768px) {
+  .blocks {
+    grid-template-columns: 1fr;
+  }
+}

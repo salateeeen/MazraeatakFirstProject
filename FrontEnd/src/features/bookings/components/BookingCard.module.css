@@ -1,0 +1,228 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+  padding: var(--pad-lg);
+
+  background: var(--surface-card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 10px var(--shadow-medium);
+
+  transition: 0.2s ease;
+}
+
+.card:hover{
+  transform: translateY(-2px);
+}
+
+/* Image */
+.image {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Info */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.pending {
+  background: var(--status-pending);
+}
+
+.confirmed {
+  background: var(--status-confirmed);
+}
+
+.cancelled {
+  background: var(--status-cancelled);
+}
+
+.completed {
+  background: var(--status-completed, #22c55e);
+}
+
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.actions button {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  padding: var(--pad-sm) var(--pad-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  color: var(--on-accent);
+  font-weight: 600;
+
+  box-shadow: 0 2px 6px var(--shadow-stronger);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actions button:hover {
+  transform: scale(1.025);
+}
+
+.actions svg {
+  fill: var(--on-accent);
+  stroke: var(--on-accent);
+}
+
+.rateBtn {
+  background: var(--gradient-status-pending);
+}
+
+.rateBtn:hover {
+  box-shadow: 0 4px 12px var(--shadow-accent-soft);
+}
+
+.callBtn {
+  background: var(--gradient-status-confirmed);
+}
+
+.callBtn:hover {
+  box-shadow: 0 4px 12px var(--shadow-accent-soft);
+}
+
+.locationBtn {
+  background: var(--gradient-status-info);
+}
+
+.locationBtn:hover {
+  box-shadow: 0 4px 12px var(--shadow-accent-soft);
+}
+
+.cancelBtn {
+  background: var(--gradient-status-cancelled);
+}
+
+.cancelBtn:hover {
+  box-shadow: 0 4px 12px var(--shadow-accent-error);
+}
+
+.completeBtn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.completeBtn:hover {
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+}
+
+
+.dates {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--font-size-sm);
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: var(--pad-sm);
+  border-radius: var(--radius-lg);
+  font-weight: 500;
+  font-size: var(--font-size-xs);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.slot:hover {
+  transform: translateY(-2px);
+}
+
+.morning {
+  background: var(--gradient-highlight-warm);
+  color: var(--text-heading);
+}
+
+.fullday {
+  background: var(--gradient-highlight-cool);
+  color: var(--on-accent);
+}
+
+.evening {
+  background: var(--gradient-highlight-dark);
+  color: var(--on-accent);
+}
+
+.rateModal {
+  width: 100%;
+  width: 400px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .image {
+    height: 160px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+}

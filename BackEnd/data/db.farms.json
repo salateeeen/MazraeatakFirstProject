@@ -1,0 +1,297 @@
+[{
+  "_id": {
+    "$oid": "699b5be46a671549d2ec008f"
+  },
+  "farmName": "omar",
+  "farmOwner": {
+    "$oid": "699a7e0799f50fcdaea56daf"
+  },
+  "facilities": [
+    {
+      "$oid": "69965a41eadbdc3171dfdef5"
+    },
+    {
+      "$oid": "69965a41eadbdc3171dfdef6"
+    },
+    {
+      "$oid": "69965a41eadbdc3171dfdef3"
+    }
+  ],
+  "ratingsAverage": 4,
+  "ratingsQuantity": 1,
+  "city": {
+    "$oid": "69967f68eadbdc3171dfdf20"
+  },
+  "pricing": {
+    "weekday": {
+      "morning": 110,
+      "evening": 130,
+      "fullDay": 140
+    },
+    "weekend": {
+      "morning": 130,
+      "evening": 150,
+      "fullDay": 160
+    }
+  },
+  "timeSlots": {
+    "morning": {
+      "from": 540,
+      "to": 1260
+    },
+    "evening": {
+      "from": 1260,
+      "to": 540
+    },
+    "fullDay": {
+      "from": 540,
+      "to": 540
+    }
+  },
+  "maximumGuests": 22,
+  "area": 1,
+  "description": "Experience fresh, high-quality produce and family-friendly fun at our sustainable farm, where nature and care go hand in hand.",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      36.09794998090366,
+      32.06552353471913
+    ]
+  },
+  "category": {
+    "$oid": "69967958eadbdc3171dfdf15"
+  },
+  "coverImage": "https://res.cloudinary.com/dexowwof5/image/upload/v1771789280/farms/cjpyrjpliumpbpocumll.jpg",
+  "images": [
+    "https://res.cloudinary.com/dexowwof5/image/upload/v1771789282/farms/y2kdu8dlx59ea8nckzxk.jpg"
+  ],
+  "createdAt": {
+    "$date": "2026-02-22T19:41:24.102Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-22T22:43:08.332Z"
+  },
+  "basePrice": 140,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699b85fcf9054a608ec36608"
+  },
+  "farmName": "sultan",
+  "farmOwner": {
+    "$oid": "68efbf246799868f83566000"
+  },
+  "facilities": [
+    {
+      "$oid": "69965a41eadbdc3171dfdef2"
+    },
+    {
+      "$oid": "69965a41eadbdc3171dfdef6"
+    },
+    {
+      "$oid": "69965a41eadbdc3171dfdef5"
+    },
+    {
+      "$oid": "69965a41eadbdc3171dfdef1"
+    }
+  ],
+  "ratingsAverage": 3.7,
+  "ratingsQuantity": 13,
+  "city": {
+    "$oid": "69967f68eadbdc3171dfdf20"
+  },
+  "pricing": {
+    "weekday": {
+      "morning": 110,
+      "evening": 130,
+      "fullDay": 140
+    },
+    "weekend": {
+      "morning": 130,
+      "evening": 150,
+      "fullDay": 160
+    }
+  },
+  "timeSlots": {
+    "morning": {
+      "from": 540,
+      "to": 1260
+    },
+    "evening": {
+      "from": 1260,
+      "to": 540
+    },
+    "fullDay": {
+      "from": 540,
+      "to": 540
+    }
+  },
+  "maximumGuests": 22,
+  "area": 1,
+  "description": "Experience fresh, high-quality produce and family-friendly fun at our sustainable farm, where nature and care go hand in hand.",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      36.09794998090366,
+      32.06552353471913
+    ]
+  },
+  "category": {
+    "$oid": "69967958eadbdc3171dfdf15"
+  },
+  "coverImage": "https://res.cloudinary.com/dexowwof5/image/upload/v1771800057/farms/kt9sd5cose6kqrgzjfck.jpg",
+  "images": [
+    "https://res.cloudinary.com/dexowwof5/image/upload/v1771800059/farms/szbe1ayksl6igebkvmor.jpg"
+  ],
+  "createdAt": {
+    "$date": "2026-02-22T22:41:00.718Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-22T22:41:00.718Z"
+  },
+  "basePrice": 140,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a0a0743fbb8c5ba160cbef"
+  },
+  "farmName": "sultan",
+  "farmOwner": {
+    "$oid": "699a7e0799f50fcdaea56daf"
+  },
+  "facilities": [],
+  "ratingsAverage": 3.7,
+  "ratingsQuantity": 13,
+  "city": {
+    "$oid": "69967f68eadbdc3171dfdf24"
+  },
+  "pricing": {
+    "weekday": {
+      "morning": 110,
+      "evening": 130,
+      "fullDay": 140
+    },
+    "weekend": {
+      "morning": 130,
+      "evening": 150,
+      "fullDay": 160
+    }
+  },
+  "timeSlots": {
+    "morning": {
+      "from": 540,
+      "to": 1260
+    },
+    "evening": {
+      "from": 1260,
+      "to": 540
+    },
+    "fullDay": {
+      "from": 540,
+      "to": 540
+    }
+  },
+  "maximumGuests": 22,
+  "area": 1,
+  "description": "Experience fresh, high-quality produce and family-friendly fun at our sustainable farm, where nature and care go hand in hand.",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      36.09794998090366,
+      32.06552353471913
+    ]
+  },
+  "category": {
+    "$oid": "69967958eadbdc3171dfdf16"
+  },
+  "coverImage": "https://res.cloudinary.com/dexowwof5/image/upload/v1772134512/farms/jbzqn0b9fofexnm1dra5.webp",
+  "images": [
+    "https://res.cloudinary.com/dexowwof5/image/upload/v1772134515/farms/k3d9qb1o74itasgbwvk9.jpg"
+  ],
+  "createdAt": {
+    "$date": "2026-02-26T19:35:16.846Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-26T19:35:16.846Z"
+  },
+  "basePrice": 140,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a326300c27027d40a2280d"
+  },
+  "farmName": "varan",
+  "farmOwner": {
+    "$oid": "68efbf246799868f83566000"
+  },
+  "facilities": [
+    {
+      "$oid": "69965a41eadbdc3171dfdef2"
+    },
+    {
+      "$oid": "69965a41eadbdc3171dfdef3"
+    },
+    {
+      "$oid": "69965a41eadbdc3171dfdef5"
+    }
+  ],
+  "ratingsAverage": 3.7,
+  "ratingsQuantity": 13,
+  "city": {
+    "$oid": "69967f68eadbdc3171dfdf1d"
+  },
+  "pricing": {
+    "weekday": {
+      "morning": 110,
+      "evening": 130,
+      "fullDay": 140
+    },
+    "weekend": {
+      "morning": 130,
+      "evening": 150,
+      "fullDay": 160
+    }
+  },
+  "timeSlots": {
+    "morning": {
+      "from": 540,
+      "to": 1260
+    },
+    "evening": {
+      "from": 1260,
+      "to": 540
+    },
+    "fullDay": {
+      "from": 540,
+      "to": 540
+    }
+  },
+  "maximumGuests": 22,
+  "area": 1,
+  "description": "Experience fresh, high-quality produce and family-friendly fun at our sustainable farm, where nature and care go hand in hand.",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      36.09794998090366,
+      32.06552353471913
+    ]
+  },
+  "category": {
+    "$oid": "69967958eadbdc3171dfdf15"
+  },
+  "coverImage": "https://res.cloudinary.com/dexowwof5/image/upload/v1772299823/farms/obqwdcixurevjdclxcun.jpg",
+  "images": [
+    "https://res.cloudinary.com/dexowwof5/image/upload/v1772299824/farms/wei43bvlkhaqcj9s6qc7.jpg"
+  ],
+  "createdAt": {
+    "$date": "2026-02-28T17:30:24.919Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-28T17:30:24.919Z"
+  },
+  "basePrice": 140,
+  "__v": 0
+}]

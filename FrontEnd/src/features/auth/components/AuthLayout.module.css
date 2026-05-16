@@ -1,0 +1,120 @@
+.authContainer {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--surface-page);
+}
+
+.leftSide {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-soft) 100%);
+    color: var(--on-accent);
+    padding: var(--gap-3xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.leftSide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background-image: var(--gradient-brand-dot);
+    background-size: 20px 20px;
+}
+
+.brandContent {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    text-align: center;
+}
+
+.leftSide h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: var(--gap-lg);
+    letter-spacing: -1px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.leftSide p {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--gap-3xl);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.leftSide .btn {
+    background-color: var(--overlay-light-strong);
+    color: var(--accent);
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    transition: all 0.3s ease;
+}
+
+.leftSide .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--overlay-light-solid);
+}
+
+.rightSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--gap-3xl);
+    background-color: var(--surface-page);
+}
+
+.formWrapper {
+    width: 100%;
+    max-width: 450px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-md);
+    margin-bottom: var(--gap-3xl);
+    text-align: center;
+}
+
+.logo svg {
+    color: var(--accent);
+    filter: drop-shadow(0 4px 6px var(--shadow-subtle));
+}
+
+.formContent {
+    width: 100%;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .leftSide {
+        display: none;
+    }
+    
+    .rightSide {
+        flex: 1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .rightSide {
+        padding: var(--gap-xl);
+    }
+    
+    .formWrapper {
+        max-width: 100%;
+    }
+}

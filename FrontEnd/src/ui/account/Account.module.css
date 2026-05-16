@@ -1,0 +1,110 @@
+.container {
+  position: relative;
+}
+
+.profile {
+  width: 50px;
+  height: 50px;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown {
+  width: 230px;
+  background: var(--surface-panel);
+  border-radius: var(--radius-md);
+  padding: var(--pad-lg);
+  box-shadow: 0 12px 30px var(--shadow-stronger);
+}
+
+.avatarLarge {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 8px;
+  border: 1px dashed var(--text-heading);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: 50%;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.name {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.divider {
+  height: 1px;
+  background: var(--slot-disabled-bg);
+  margin: 12px 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: var(--pad-sm) var(--pad-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-heading);
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.item:hover {
+  background: var(--surface-card-hover);
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+  background: var(--surface-error);
+  color: var(--text-error);
+}
+
+.logout:hover {
+  background: var(--surface-error-strong);
+  color: var(--text-error-strong);
+}
+
+.errorCircle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--surface-error, #ef4444);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}

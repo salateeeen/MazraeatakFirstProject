@@ -1,0 +1,18 @@
+.card {
+  background: var(--surface-panel);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.card h4 {
+  font-size: .9rem;
+  opacity: .7;
+  margin-bottom: .75rem;
+}
+
+.note {
+  margin-top: .75rem;
+  font-size: .8rem;
+  opacity: .6;
+}

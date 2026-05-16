@@ -1,0 +1,83 @@
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0.5rem 0.3rem;
+  font-family: sans-serif;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4rem 0.6rem;
+  color: var(--on-accent);
+}
+
+td {
+  padding: 0;
+}
+
+.dayName {
+  font-weight: 500;
+  color: var(--on-accent);
+}
+
+/* base slot */
+.slot {
+  width: 100%;
+  padding: 0.35rem 0;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--slot-border);
+  background: var(--slot-bg);
+  color: var(--slot-text-muted);
+  cursor: not-allowed;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+/* active slot */
+.slot.active {
+  background-color: var(--status-confirmed);
+  color: var(--on-accent);
+  border: none;
+  cursor: pointer;
+}
+
+.slot.active:hover {
+  filter: brightness(1.08);
+}
+
+/* icons */
+.icon {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+/* active icon */
+.slot.active .icon {
+  color: var(--on-accent);
+}
+
+/* disabled icon */
+.slot:not(.active) .icon {
+  color: var(--slot-text-muted);
+}
+
+/* optional: morning / evening vibe colors */
+.morningIcon {
+  color: var(--status-warning);
+}
+
+.eveningIcon {
+  color: var(--status-info);
+}
+
+/* disabled look softer */
+.slot:not(.active) {
+  background: var(--slot-disabled-bg);
+  color: var(--slot-text-muted);
+}

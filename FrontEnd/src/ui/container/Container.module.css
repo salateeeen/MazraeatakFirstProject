@@ -1,0 +1,8 @@
+.container {
+    position: relative;
+    padding: var(--pad-xl);
+    border-radius: var(--radius-sm);
+    background-color: var(--surface-panel);
+    
+    box-shadow: 0 4px 20px var(--shadow-default);
+}

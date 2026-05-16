@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.star {
+  color: var(--rating-star);
+  stroke: #fbbf24;
+  fill: transparent;
+  transition: all 0.2s;
+}
+
+.filled {
+  fill: #fbbf24;
+}
+
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  transform: scale(1.1);
+}

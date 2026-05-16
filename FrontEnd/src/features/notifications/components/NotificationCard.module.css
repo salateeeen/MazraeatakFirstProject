@@ -1,0 +1,128 @@
+.notification {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--pad-lg) var(--pad-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--gap-lg);
+  transition: all 0.25s ease;
+}
+
+.notification:hover {
+  box-shadow: 0 6px 20px var(--shadow-soft);
+  border-color: var(--border-accent-subtle);
+}
+
+.unread {
+  border-left: 4px solid var(--accent);
+}
+
+.read {
+  opacity: 0.6;
+}
+
+.read:hover {
+  opacity: 0.85;
+}
+
+/* Icon wrapper */
+.iconWrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconWrapper.blue   { background: rgba(99, 102, 241, 0.12); color: #6366f1; }
+.iconWrapper.red    { background: rgba(239, 68, 68, 0.12);  color: #ef4444; }
+.iconWrapper.yellow { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+.iconWrapper.green  { background: rgba(34, 197, 94, 0.12);  color: #22c55e; }
+
+/* Body */
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.message {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--text-heading);
+  line-height: 1.4;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.slot {
+  background: var(--surface-raised);
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.time {
+  font-weight: 500;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: var(--gap-sm);
+  flex-shrink: 0;
+}
+
+.markBtn,
+.deleteBtn {
+  background: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.markBtn {
+  color: var(--accent);
+}
+
+.markBtn:hover {
+  background: var(--surface-success);
+}
+
+.deleteBtn {
+  color: var(--text-error);
+}
+
+.deleteBtn:hover {
+  background: var(--surface-error);
+}
+
+@media (max-width: 640px) {
+  .notification {
+    flex-wrap: wrap;
+    gap: var(--gap-md);
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,56 @@
+/* Local layout: mirrors ReviewCard (card, profile, rateDate, date, message) */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 240px;
+  border-radius: var(--radius-sm);
+  padding: var(--pad-xl);
+  gap: 15px;
+  background-color: var(--surface-card);
+  box-shadow: 0 4px 8px var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+}
+
+.profileName {
+  width: 140px;
+  height: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.rateDate {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.rate {
+  width: 90px;
+  height: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.date {
+  width: 70px;
+  height: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.message {
+  flex: 1;
+  min-height: 60px;
+  border-radius: var(--radius-sm);
+  padding: var(--pad-md);
+}

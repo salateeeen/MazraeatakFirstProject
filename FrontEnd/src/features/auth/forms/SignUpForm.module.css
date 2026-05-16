@@ -1,0 +1,28 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.form input {
+    height: 50px;
+}
+
+.hint {
+    align-self: start;
+    font-size: var(--font-size-sm);
+    margin-top: -5px;
+    margin-left: 5px;
+    color: var(--text-body);
+}
+
+.link {
+    color: var(--accent);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.link:hover {
+    text-decoration: underline;
+}

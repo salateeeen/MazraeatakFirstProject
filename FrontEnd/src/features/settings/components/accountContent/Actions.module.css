@@ -1,0 +1,33 @@
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.actionBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  padding: var(--pad-md) var(--pad-lg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--surface-panel);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.actionBox:hover {
+  border-color: var(--accent-soft);
+  background-color: var(--surface-input-active);
+}
+
+.actionBox h4 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.actionBox p {
+  font-size: var(--font-size-xs);
+  color: var(--text-body);
+}

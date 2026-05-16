@@ -1,0 +1,67 @@
+.card {
+    background: var(--surface-card);
+    padding: var(--pad-xl);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.title {
+    font-size: var(--font-size-xl);
+    font-variant: small-caps;
+    font-weight: 600;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--font-size-sm);
+    color: var(--text-body);
+}
+
+.category {
+    background: var(--surface-success);
+    color: var(--text-success);
+    padding: 3px 10px;
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-body);
+    font-size: var(--font-size-sm);
+}
+
+/* FACILITIES */
+.facilities {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    background: var(--surface-success-strong);
+    color: var(--on-accent);
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}

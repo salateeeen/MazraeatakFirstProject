@@ -1,0 +1,8 @@
+.fav {
+  stroke: crimson;
+  fill: crimson;
+}
+
+.notFav {
+  stroke: gray;
+}

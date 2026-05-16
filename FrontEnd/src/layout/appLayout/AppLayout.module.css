@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xl);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--gap-3xl);
+
+    width: 100%;
+    max-width: 1300px;
+    min-height: 90vh;
+    margin: 0 auto;
+}
+

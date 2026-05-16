@@ -1,0 +1,38 @@
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* 🔥 card sections */
+.card {
+  background: var(--surface-form-card);
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid var(--surface-form-border);
+  box-shadow: 0 6px 18px var(--shadow-subtle);
+  transition: 0.25s;
+}
+
+.card:hover {
+  box-shadow: 0 10px 28px var(--shadow-default);
+}
+
+.sectionTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 1rem;
+}
+
+/* 🔥 inputs grid */
+.rowInputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* spacing between rows inside same card */
+.card .rowInputs:not(:last-child) {
+  margin-bottom: 1rem;
+}

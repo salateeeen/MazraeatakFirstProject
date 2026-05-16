@@ -1,0 +1,41 @@
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-elevated);
+
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--overlay-light-strong);
+  border: none;
+  box-shadow: 0 4px 12px var(--shadow-stronger);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(6px);
+}
+
+.arrow:hover {
+  background-color: var(--overlay-light-solid);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 18px var(--shadow-soft);
+}
+
+.arrow:active {
+  transform: translateY(-50%) scale(0.95);
+  box-shadow: 0 2px 6px var(--shadow-elevated);
+  background-color: var(--surface-overlay-gray);
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}

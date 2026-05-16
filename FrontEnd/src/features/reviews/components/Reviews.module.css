@@ -1,0 +1,35 @@
+.container {
+  background: var(--surface-form-card);
+  border: 1px solid var(--surface-form-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px var(--shadow-subtle);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 22rem 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.summarySection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 5rem;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .summarySection {
+    position: static;
+  }
+  .container {
+    padding: 1.5rem;
+  }
+}

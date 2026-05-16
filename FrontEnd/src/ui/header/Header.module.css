@@ -1,0 +1,94 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: var(--gradient-brand);
+
+    height: 80px;
+    padding: var(--pad-md);
+
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+}
+
+.isNotHome {
+    box-shadow: 0 10px 25px var(--shadow-card);
+}
+
+.logo {
+    height: 100%;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.icon {
+    margin-left: 10px;
+    color: var(--on-accent);
+    width: 50px;
+    height: 50px;
+}
+
+.header h1 {
+    color: var(--on-accent);
+    font-size: var(--font-size-2xl);
+}
+
+.isHome {
+    transform: translateY(42.5px);
+    transition: 2s ease;
+}
+
+.isScroll {
+    transform: translateY(0);
+}
+
+.register {
+    display: flex;
+    gap: 10px;
+}
+
+.header:has(.isScroll) {
+    box-shadow: 0 10px 25px var(--shadow-card);
+}
+
+.accountAndNotifications {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.notification {
+    cursor: pointer;
+    color: var(--on-accent);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.notificationIcon {
+    width: 35px;
+    height: 35px;
+}
+
+.notification:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        display: none;
+    }
+    .search {
+        transform: translateY(0) ;
+        transition: 2s ease;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .header h1 {
+        display: none;
+    }
+}

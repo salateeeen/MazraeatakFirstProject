@@ -1,0 +1,82 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  appearance: none;
+  outline: none;
+}
+
+/* Helper for absolute positioning on images/cards */
+.absolute {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--surface-raised);
+  border-color: var(--border-subtle);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px var(--shadow-subtle);
+}
+
+.left {
+  right: auto;
+  left: 12px;
+}
+
+/* Sizes */
+.sm { width: 30px; height: 30px; }
+.md { width: 36px; height: 36px; }
+.lg { width: 44px; height: 44px; }
+
+/* Variants */
+.default:hover {
+  background-color: var(--surface-raised);
+  color: var(--accent);
+  border-color: var(--border-subtle);
+}
+
+.danger {
+  color: var(--text-error);
+}
+
+.danger:hover,
+.closeCancel:hover {
+  background-color: var(--surface-error);
+  color: var(--text-error-strong);
+  border-color: var(--text-error);
+}
+
+.success {
+  color: var(--text-success);
+}
+
+.success:hover {
+  background-color: var(--surface-success);
+  color: var(--text-success-strong);
+}
+
+.ghost:hover {
+  background-color: var(--surface-raised);
+}
+
+/* States */
+.icon:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.icon:active {
+  transform: scale(0.92);
+}

@@ -1,0 +1,90 @@
+.card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 12px;
+  padding: 10px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.badge {
+  width: 50px;
+  height: 18px;
+  border-radius: var(--radius-sm);
+}
+
+.name {
+  width: 70%;
+  height: 18px;
+  border-radius: var(--radius-sm);
+}
+
+.location {
+  width: 50%;
+  height: 16px;
+  border-radius: var(--radius-sm);
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.ratingBox {
+  width: 36px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+}
+
+.ratingText {
+  width: 60px;
+  height: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.metaSection {
+  border-top: 1px dashed var(--border-subtle);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.metaItem {
+  width: 60px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+}
+
+.priceBox {
+  margin-top: 6px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.price {
+  width: 56px;
+  height: 18px;
+  border-radius: var(--radius-sm);
+}

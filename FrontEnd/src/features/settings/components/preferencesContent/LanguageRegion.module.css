@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.container select {
+  height: 40px;
+}
+
+.info {
+  padding: var(--pad-md);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-input-active);
+  color: var(--accent);
+  font-size: var(--font-size-md);
+}

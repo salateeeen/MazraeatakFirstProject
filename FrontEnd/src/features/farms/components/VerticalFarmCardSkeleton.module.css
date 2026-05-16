@@ -1,0 +1,95 @@
+/* Local layout: mirrors VerticalFarmCard (card, img, info, badge, name, location, ratingRow, metaSection, priceBox) */
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--surface-card);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  flex-grow: 1;
+}
+
+.img {
+  position: relative;
+  height: 160px;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.badge {
+  width: 50px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.name {
+  width: 60%;
+  height: 16px;
+  align-self: center;
+  border-radius: var(--radius-sm);
+}
+
+.location {
+  width: 45%;
+  height: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.ratingBox {
+  width: 36px;
+  height: 22px;
+  border-radius: 4px;
+}
+
+.ratingText {
+  width: 50px;
+  height: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.metaSection {
+  border-top: 1px solid var(--shadow-soft);
+  padding-top: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.metaItem {
+  width: 56px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+}
+
+.priceBox {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.price {
+  width: 48px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+}

@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.coverPreview {
+  margin-top: 1rem;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--surface-form-border);
+}
+
+.coverPreview img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* 🔥 cards */
+.card {
+  background: var(--surface-form-card);
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid var(--surface-form-border);
+  box-shadow: 0 6px 18px var(--shadow-subtle);
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* 🔥 upload area */
+.uploadArea {
+  min-height: 220px;
+  border-radius: 14px;
+  border: 2px dashed var(--border-form-upload);
+  background: var(--surface-form-upload);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.uploadArea:hover {
+  border-color: var(--border-form-upload-active);
+  background: var(--surface-form-upload-active);
+}
+
+.icon {
+  width: 54px;
+  height: 54px;
+  color: var(--text-form-upload-success);
+}
+
+.uploadArea p {
+  font-weight: 600;
+}
+
+.uploadArea span {
+  font-size: 0.85rem;
+  color: var(--text-body);
+}
+
+/* 🔥 preview grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
+  gap: 1rem;
+}
+
+.imageBox {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--surface-form-border);
+  background: var(--surface-input);
+}
+
+.imageBox img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.fileName {
+  display: block;
+  font-size: 0.75rem;
+  padding: 0.4rem;
+  text-align: center;
+}
+
+/* remove button */
+.removeBtn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border: none;
+  background: var(--overlay-backdrop-strong);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}

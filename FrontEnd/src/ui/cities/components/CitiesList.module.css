@@ -1,0 +1,12 @@
+.wrapper {
+  position: relative;
+}
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}

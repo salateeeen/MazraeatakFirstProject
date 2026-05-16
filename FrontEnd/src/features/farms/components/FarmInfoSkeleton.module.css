@@ -1,0 +1,71 @@
+.card {
+  background: var(--surface-card);
+  padding: var(--pad-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 10px 30px var(--shadow-medium);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+/* ---------- TOP ---------- */
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  width: 60%;
+  height: 28px;
+  border-radius: var(--radius-sm);
+}
+
+.rating {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.ratingItem {
+  height: 18px;
+  border-radius: var(--radius-sm);
+}
+
+.ratingPrimary {
+  width: 110px;
+}
+
+.ratingSecondary {
+  width: 90px;
+}
+
+/* ---------- INFO ---------- */
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.infoItem {
+  width: 140px;
+  height: 18px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- FACILITIES ---------- */
+
+.facilities {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  width: 90px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+}

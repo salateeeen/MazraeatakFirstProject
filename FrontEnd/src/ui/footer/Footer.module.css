@@ -1,0 +1,94 @@
+.footer {
+  background: var(--gradient-brand);
+  border-top: 1px solid var(--border-subtle);
+  color: var(--on-accent);
+}
+
+/* هذا هو السحر */
+.inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: var(--pad-2xl) var(--pad-xl);
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  align-items: flex-start;
+  gap: var(--gap-3xl);
+}
+
+/* Brand */
+.brand {
+  text-align: left;
+}
+
+.brand h3 {
+  font-size: var(--font-size-lg);
+  color: var(--on-accent);
+  margin-bottom: var(--gap-sm);
+}
+
+.brand p {
+  font-size: var(--font-size-sm);
+  max-width: 320px;
+}
+
+/* Links */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.links a {
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  color: var(--on-accent);
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--on-accent);
+}
+
+/* Social */
+.social {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap-md);
+}
+
+.social a {
+  color: var(--on-accent);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social a:hover {
+  color: var(--on-accent);
+  transform: translateY(-2px);
+}
+
+/* Bottom */
+.bottom {
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--pad-md) var(--pad-xl);
+}
+
+.bottom span {
+  max-width: 1200px;
+  margin: auto;
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--on-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social {
+    justify-content: center;
+  }
+}

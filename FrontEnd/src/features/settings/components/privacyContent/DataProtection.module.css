@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.secondary {
+  flex: 1;
+  padding: var(--pad-md);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--surface-panel);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.secondary:hover {
+  background-color: var(--tag-fill);
+}
+
+.danger {
+  flex: 1;
+  padding: var(--pad-md);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--surface-panel);
+  color: var(--text-error-strong);
+  cursor: pointer;
+}
+
+.danger:hover {
+  background-color: var(--surface-error);
+}

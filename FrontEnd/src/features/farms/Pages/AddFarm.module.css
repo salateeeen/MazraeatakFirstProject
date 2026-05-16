@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2xl);
+  
+  width: 100%;
+  padding: var(--pad-2xl);
+  
+  background: var(--surface-card);
+  box-shadow: 0 4px 24px var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.stepperAndForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3xl);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+}
+
+.stepContent {
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--pad-2xl);
+  margin-top: var(--gap-2xl);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+
+.spacer {
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: var(--pad-md);
+  }
+
+  .form {
+    padding: var(--pad-lg);
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .spacer {
+    display: none;
+  }
+}

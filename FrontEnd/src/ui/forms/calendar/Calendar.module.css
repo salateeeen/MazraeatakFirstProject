@@ -1,0 +1,63 @@
+.calendarWrapper {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dayPicker {
+  --rdp-cell-size: 3.5rem;
+  --rdp-accent-color: var(--accent);
+  --rdp-background-color: var(--surface-raised);
+  --rdp-outline: 2px solid var(--accent);
+  --rdp-outline-selected: 2px solid var(--accent);
+  margin: 0;
+  font-family: inherit;
+  color: var(--text-heading);
+}
+
+.dayPicker :global(.rdp-day_selected) {
+  background-color: var(--accent) !important;
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--accent) !important;
+  outline: none !important;
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3) !important;
+}
+
+.dayPicker :global(.rdp-day:hover:not(.rdp-day_selected)) {
+  background-color: var(--surface-raised) !important;
+  color: var(--accent) !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.dayPicker :global(.rdp-button:focus:not(:active)) {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md) !important;
+}
+
+.dayPicker :global(.rdp-caption_label) {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  text-transform: capitalize;
+}
+
+.dayPicker :global(.rdp-head_cell) {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+
+
+
+.dayPicker :global(.rdp-today) {
+  color: var(--accent) !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: var(--radius-full) !important;
+}

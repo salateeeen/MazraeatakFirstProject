@@ -1,0 +1,85 @@
+.container {
+  padding: 1rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.textareaGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.textarea {
+  min-height: 120px;
+}
+
+.submitBtn {
+  align-self: flex-start;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.statusContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--surface-panel, #ffffff);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: 0 4px 20px var(--shadow-subtle, rgba(0, 0, 0, 0.05));
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.iconPending {
+  color: #f59e0b;
+  margin-bottom: 1.5rem;
+}
+
+.iconRejected {
+  color: var(--surface-error, #ef4444);
+  margin-bottom: 1.5rem;
+}
+
+.statusTitle {
+  font-size: var(--font-size-xl, 1.5rem);
+  color: var(--text-heading, #1f2937);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.statusDesc {
+  font-size: var(--font-size-md, 1rem);
+  color: var(--text-primary, #4b5563);
+  line-height: 1.6;
+}

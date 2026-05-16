@@ -1,0 +1,13 @@
+.container {
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1.5fr 4fr;
+    gap: 1rem;
+}
+
+.farms {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

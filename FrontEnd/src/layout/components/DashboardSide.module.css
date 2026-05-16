@@ -1,0 +1,121 @@
+.sidebar {
+  width: 260px;
+  background-color: var(--surface-panel);
+  color: var(--text-heading);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  border-right: 1px solid var(--border-subtle);
+  z-index: var(--z-drawer);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo {
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.5px;
+  color: var(--text-heading);
+}
+
+.logo span {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.nav {
+  flex: 1;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-muted);
+  position: relative;
+  overflow: hidden;
+}
+
+.item:hover {
+  background-color: var(--surface-card-hover);
+  color: var(--text-heading);
+  transform: translateX(4px);
+}
+
+.item.active {
+  background-color: var(--surface-success);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.item:hover .icon,
+.item.active .icon {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+.label {
+  font-size: var(--font-size-md);
+  letter-spacing: 0.01em;
+}
+
+.activePill {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 4px;
+  background-color: var(--accent);
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 8px var(--shadow-accent-soft);
+}
+
+.footer {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid var(--border-subtle);
+  list-style: none;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,12 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: var(--pad-2xl);
+  font-size: var(--font-size-md);
+}

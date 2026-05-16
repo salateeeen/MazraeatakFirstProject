@@ -1,0 +1,40 @@
+/* Local layout: mirrors FarmHighlights (card, title, list of highlight items) */
+.card {
+  background: var(--surface-panel);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.title {
+  width: 45%;
+  height: 20px;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.itemIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.itemText {
+  flex: 1;
+  height: 18px;
+  border-radius: var(--radius-sm);
+}

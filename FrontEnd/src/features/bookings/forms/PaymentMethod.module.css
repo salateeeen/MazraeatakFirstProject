@@ -1,0 +1,49 @@
+.paymentCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+}
+
+.paymentOptions {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--gap-md);
+}
+
+.paymentOption {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  gap: var(--gap-md);
+  padding: var(--pad-sm) var(--pad-md);
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid var(--border-input);
+
+  background: var(--surface-card);
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.paymentOption:hover {
+  background: var(--surface-card-hover);
+  box-shadow: 0 4px 12px var(--shadow-stronger);
+}
+
+.paymentOption.active {
+  background-color: var(--accent);
+  color: var(--on-accent);
+  border: 1px solid transparent;
+}
+
+.paymentIcon {
+  font-size: var(--font-size-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

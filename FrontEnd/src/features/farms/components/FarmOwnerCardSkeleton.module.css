@@ -1,0 +1,40 @@
+/* Local layout: mirrors FarmOwnerCard (card, title, profile, note) */
+.card {
+  background: var(--surface-panel);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.title {
+  width: 40%;
+  height: 18px;
+  margin-bottom: 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.profileName {
+  flex: 1;
+  height: 18px;
+  border-radius: var(--radius-sm);
+}
+
+.note {
+  width: 85%;
+  height: 14px;
+  margin-top: 0.75rem;
+  border-radius: var(--radius-sm);
+}

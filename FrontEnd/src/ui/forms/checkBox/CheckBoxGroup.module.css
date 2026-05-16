@@ -1,0 +1,13 @@
+.group {
+  width: 100%;
+}
+
+.list {
+  width: 100%;
+}
+
+.error {
+  color: var(--text-error);
+  padding: 12px;
+  font-size: var(--font-size-sm);
+}

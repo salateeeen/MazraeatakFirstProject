@@ -1,0 +1,22 @@
+.description {
+    background: var(--surface-panel);
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 8px 25px var(--shadow-soft);
+}
+
+.textBox {
+    margin-top: 1rem;
+    padding: var(--pad-md) var(--pad-lg);
+    min-height: 150px;
+    background: var(--surface-card);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-overlay);
+    box-shadow: inset 0 1px 0 var(--shadow-inset);
+}
+
+.textBox p {
+    line-height: 1.8;
+    font-size: var(--font-size-small);
+}
