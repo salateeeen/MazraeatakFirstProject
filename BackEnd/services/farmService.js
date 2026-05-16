@@ -63,8 +63,6 @@ const FarmsLocations = async (queryParams, distance, latlng, unit, user = null) 
     .fields()
     .query;
 
-  console.log({ farms });
-
   return farms;
 };
 
