@@ -2,8 +2,11 @@ import Button from "@/ui/button/Button";
 import Input from "@/ui/forms/input/Input";
 import styles from "./Password.module.css";
 import { FormProvider, useForm } from "react-hook-form";
+import { useUpdatePassword } from "../../hooks/useUpdatePassword";
 
 export default function Password() {
+  const {mutate: updatePassword, isPending:isUpdating} = useUpdatePassword();
+
   const passwordForm = useForm({
     defaultValues: {
       currentPassword: "",
@@ -12,7 +15,9 @@ export default function Password() {
     },
   });
 
+
   function onSubmit(data) {
+    updatePassword(data)
   }
 
   return (
@@ -39,7 +44,7 @@ export default function Password() {
           label={"confirm password"}
           placeholder={"confirm password"}
         />
-        <Button type="submit">save</Button>
+        <Button type="submit" isPending={isUpdating}>save</Button>
       </form>
     </FormProvider>
   );

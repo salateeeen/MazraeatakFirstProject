@@ -5,14 +5,17 @@ import styles from "./Search.module.css";
 import Input from "../input/Input";
 import Spinner from "@/ui/spinner/Spinner";
 import { useCloseComponents } from "@/hooks/useCloseComponents";
+import DropDown from "@/ui/dropDown/DropDown";
 
 export default function Search({
   onSubmit,
   onSelect,
-  search,
   results = [],
   isPending,
   className = "",
+  searchName,
+  searchValue,
+  placeholder,
   RenderItem,
   emptyMessage = "No results found.",
 }) {
@@ -29,7 +32,21 @@ export default function Search({
     }
   }, [activeIndex]);
 
+  function handleSubmit() {
+    if (searchValue?.trim()?.length <= 2) return;
+    onSubmit();
+    setActiveIndex(-1);
+    setOpen(false);
+  }
+
   function handleKeyDownContainer(e) {
+    if(e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+      e.target.blur();
+      return;
+    }
+    
     if (e.key === "ArrowDown" && results.length > 0) {
       e.preventDefault();
       setActiveIndex(0);
@@ -54,6 +71,8 @@ export default function Search({
     }
   }
 
+  
+
   function handleFocus() {
     setOpen(true);
   }
@@ -62,18 +81,19 @@ export default function Search({
     <div className={styles.container} ref={containerRef} onFocus={handleFocus}>
       <Input
         type="text"
-        name={"search"}
+        name={searchName}
         ref={searchRef}
         label={null}
+        placeholder={placeholder}
         className={`${styles.search} ${className}`}
         autoComplete="off"
         onKeyDown={handleKeyDownContainer}
       >
-        <LuSearch size={20} onClick={onSubmit} />
+        <LuSearch size={20} onClick={handleSubmit} />
       </Input>
 
-      {open && search?.trim().length >= 2 && (
-        <div className={styles.searchList}>
+      {open && (
+        <DropDown className={styles.searchList}>
           {isPending && (
             <div className={styles.spinner}>
               <Spinner widthAndheight="40px" />
@@ -101,7 +121,7 @@ export default function Search({
               {emptyMessage}
             </div>
           )}
-        </div>
+        </DropDown>
       )}
     </div>
   );

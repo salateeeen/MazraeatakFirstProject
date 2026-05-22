@@ -11,9 +11,9 @@ function getInitials(user) {
 export default function RecentReviews({ recentReviews = [] }) {
   return (
     <section className={styles.section}>
-      <Title size="lg" mb="1.2rem">
+      <header><Title size="lg" mb="1.2rem">
         Recent Reviews
-      </Title>
+      </Title></header>
       
       {recentReviews.length === 0 ? (
         <Empty title="No reviews yet." message="You don't have any reviews yet." />

@@ -3,7 +3,7 @@ import { fetchReviews } from "../services/reviewsApi";
 
 export const useReviews = (id) => {
   return useQuery({
-      queryKey: ["reviews", id],
-      queryFn: () => fetchReviews(id),
+    queryKey: ["reviews", id],
+    queryFn: () => fetchReviews(id),
   });
 };

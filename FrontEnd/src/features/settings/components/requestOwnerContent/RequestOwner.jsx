@@ -105,8 +105,8 @@ export default function RequestOwner() {
             />
           </div>
 
-          <Button disabled={isPending} type="submit" className={styles.submitBtn}>
-            {isPending ? "Submitting..." : "Submit Request"}
+          <Button isPending={isPending} type="submit" className={styles.submitBtn}>
+            Submit Request
           </Button>
         </form>
       </FormProvider>

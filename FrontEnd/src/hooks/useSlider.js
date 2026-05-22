@@ -12,16 +12,10 @@ export function useSlider(images) {
   const sliderRef = useRef(null);
   const autoPlayRef = useRef(null);
 
-  // =========================
-  // 🎯 Navigation
-  // =========================
   const prevSlide = () => setCurrent((prev) => prev - 1);
   const nextSlide = () => setCurrent((prev) => prev + 1);
   const goToSlide = (index) => setCurrent(index + 1);
 
-  // =========================
-  // 🔁 Infinite fix
-  // =========================
   const handleTransitionEnd = () => {
     if (current === 0) {
       if (sliderRef.current) sliderRef.current.style.transition = "none";
@@ -42,9 +36,7 @@ export function useSlider(images) {
     return () => clearTimeout(id);
   }, [current]);
 
-  // =========================
-  // 🖱️ / 📱 Drag System
-  // =========================
+
   const handleStart = (x) => {
     setIsDragging(true);
     setStartX(x);
@@ -76,9 +68,6 @@ export function useSlider(images) {
     startAutoPlay();
   };
 
-  // =========================
-  // 📱 Touch Handlers (1 finger only)
-  // =========================
   const handleTouchStart = (e) => {
     if (e.touches.length !== 1) return;
     handleStart(e.touches[0].clientX);
@@ -94,9 +83,6 @@ export function useSlider(images) {
     handleEnd();
   };
 
-  // =========================
-  // ⏱️ Auto Play
-  // =========================
   const startAutoPlay = () => {
     stopAutoPlay();
     autoPlayRef.current = setInterval(() => {
@@ -113,9 +99,7 @@ export function useSlider(images) {
     return stopAutoPlay;
   }, []);
 
-  // =========================
-  // 🎯 Real Index (for dots)
-  // =========================
+  
   const realIndex =
     current === 0
       ? images.length - 1

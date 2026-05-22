@@ -21,7 +21,7 @@ function CategoriesList() {
 
   return (
     <div className={styles.container}>
-      <Title subtitle="Browse through the categories and find the perfect farm for you">categories</Title>
+      <header><Title subtitle="Browse through the categories and find the perfect farm for you">categories</Title></header>
 
       <div className={styles.cards}>
         {isPending &&

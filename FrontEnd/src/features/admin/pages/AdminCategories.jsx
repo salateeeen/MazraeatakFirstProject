@@ -66,7 +66,7 @@ export default function AdminCategories() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <Title size="xl" mb="0">Manage Categories</Title>
+        <header><Title size="xl" mb="0">Manage Categories</Title></header>
         <Button onClick={handleCloseModal} className={styles.addBtn}>
           <span className={styles.icon}><MdAdd /></span> 
           <span className={styles.text}>Add Category</span>

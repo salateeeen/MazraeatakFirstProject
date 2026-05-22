@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Input from "@/ui/forms/input/Input";
 import Button from "@/ui/button/Button";
 import { useSignup } from "../hooks/useSignup";
-import Spinner from "@/ui/spinner/Spinner";
 
 export default function SignUpForm() {
   const navigate = useNavigate();
@@ -37,8 +36,8 @@ export default function SignUpForm() {
         <Input type="email" name="email" placeholder="Email" />
         <Input type="password" name="password" placeholder="Password" />
         <Input type="password" name="confirmPassword" label="Confirm Password" placeholder="Confirm Password" />
-        <Button type="submit" disabled={isSigningUp}>
-          {isSigningUp ? <Spinner size="xs" color="#fff" /> : "Sign Up"}
+        <Button type="submit" isPending={isSigningUp}>
+          Sign Up
         </Button>
         <p className={styles.hint}>
           Already have an account?{" "}

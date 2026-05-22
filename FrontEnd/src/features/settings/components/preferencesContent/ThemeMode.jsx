@@ -2,16 +2,17 @@ import styles from "./ThemeMode.module.css";
 import RadioOption from "@/ui/forms/radioOption/RadioOption";
 import { useSettings } from "../../hooks/useSettings";
 import { useUpdateSettings } from "../../hooks/useUpdateSettings";
+import { useThemeMode } from "@/context/useThemeMode";
 
 export default function ThemeMode() {
-  const { data: settings } = useSettings();
-  const { mutate } = useUpdateSettings();
-  const theme = settings?.data.ui.theme;
+  const { themeMode, handleThemeMode } = useThemeMode();
 
   const handleRadioChange = (key, value) => {
-    mutate({
-      [`ui.${key}`]: value,
-    });
+    const modes = ["light", "dark", "system"];
+    const validMode = modes.some((mode) => mode === value);
+
+    if (!validMode) return;
+    handleThemeMode(value);
   };
 
   return (
@@ -21,7 +22,7 @@ export default function ThemeMode() {
         value="light"
         title="Light"
         description="Bright mode for your app"
-        checked={theme === "light"}
+        checked={themeMode === "light"}
         onChange={() => handleRadioChange("theme", "light")}
       />
 
@@ -30,7 +31,7 @@ export default function ThemeMode() {
         value="dark"
         title="Dark"
         description="Dark mode for your app"
-        checked={theme === "dark"}
+        checked={themeMode === "dark"}
         onChange={() => handleRadioChange("theme", "dark")}
       />
 
@@ -39,9 +40,9 @@ export default function ThemeMode() {
         value="system"
         title="Use system setting"
         description="Automatically match your device theme"
-        checked={theme === "system"}
+        checked={themeMode === "system"}
         onChange={() => handleRadioChange("theme", "system")}
       />
     </div>
   );
-};
+}

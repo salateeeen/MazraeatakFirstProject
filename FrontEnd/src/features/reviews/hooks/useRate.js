@@ -8,9 +8,7 @@ export function useRate() {
   const navigate = useNavigate();
 
   return useMutation({
-    mutationFn: ({ farmId, data }) => {
-      return createReviewApi(farmId, data);
-    },
+    mutationFn: ({ farmId, data }) => createReviewApi(farmId, data),
 
     onSuccess: (_data, variables) => {
       queryClient.invalidateQueries({

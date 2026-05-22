@@ -9,11 +9,12 @@ import { FiUsers } from "react-icons/fi";
 import { LuBedDouble } from "react-icons/lu";
 import EditButton from "@/ui/icons/EditButton";
 import { useSelector } from "react-redux";
-import { selectUserId } from "@/features/user/userSlice";
+import { selectIsAuthenticated, selectUserId } from "@/features/user/userSlice";
 
 function HorizontalFarmCard({ farm, favorites = [], onDelete, isDeleting }) {
   const navigate = useNavigate();
   const myId = useSelector(selectUserId);
+  const isAuthenticated = useSelector(selectIsAuthenticated)
   const {
     farmName,
     farmOwner,
@@ -32,19 +33,16 @@ function HorizontalFarmCard({ farm, favorites = [], onDelete, isDeleting }) {
     basePrice,
   } = farm;
 
-
   
   const isMyFarms = myId === farmOwner;
-
+  const showDeleteEdit = Boolean(isAuthenticated && isMyFarms);
+  const showFavorite = Boolean(isAuthenticated && !isMyFarms);
+  const isFavorite = favorites.includes(id);
+  
   function handleNavigate() {
     navigate(`/app/farm/${id}`);
   }
-
-  const token = localStorage.getItem("token");
-  const showDeleteEdit = Boolean(token && isMyFarms);
-  const showFavorite = Boolean(token && !isMyFarms);
-  const isFavorite = favorites.includes(id);
-
+  
   return (
     <div onClick={handleNavigate} className={styles.card}>
       {showDeleteEdit && (

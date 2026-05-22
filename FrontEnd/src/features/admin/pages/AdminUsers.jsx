@@ -26,7 +26,7 @@ export default function AdminUsers() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <Title size="xl" mb="0">All Users</Title>
+        <header><Title size="xl" mb="0">All Users</Title></header>
       </header>
 
       <DataTable 

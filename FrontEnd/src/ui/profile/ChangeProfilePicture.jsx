@@ -6,7 +6,6 @@ import { useUpdateProfilePicture } from "@/features/user/hooks/useUpdateProfileP
 import Title from "../title/Title";
 import Button from "../button/Button";
 import FileInput from "../forms/fileInput/FileInput";
-import Spinner from "../spinner/Spinner";
 
 export default function ChangeProfilePicture({ user, setOpen }) {
   const { mutate: updateProfilePicture, isPending } = useUpdateProfilePicture();
@@ -36,9 +35,9 @@ export default function ChangeProfilePicture({ user, setOpen }) {
 
   return (
     <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
-      <Title size="md" className={styles.title}>
+      <header><Title size="md" className={styles.title}>
         Update Profile Picture
-      </Title>
+      </Title></header>
 
       <div className={styles.imageSelectionArea}>
         <UserAvatar
@@ -80,7 +79,7 @@ export default function ChangeProfilePicture({ user, setOpen }) {
           Cancel
         </Button>
         <Button type="submit" className={styles.button} isPending={isPending}>
-          {isPending ? <Spinner size="sm" color="#fff" /> : "Save"}
+          Save
         </Button>
       </div>
     </form>

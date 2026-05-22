@@ -22,6 +22,7 @@ export const updateUserProfile = async (data) => {
         throw err
     }
 };
+
 export const updateProfilePicture = async (file) => {
     try {
         const res = await fetch(`${BASE_URL}/me/profile-picture`, {

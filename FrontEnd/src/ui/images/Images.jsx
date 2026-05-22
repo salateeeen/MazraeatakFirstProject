@@ -1,4 +1,4 @@
-import { useSlider } from "./useSlider";
+import { useSlider } from "../../hooks/useSlider";
 import styles from "./Images.module.css";
 import { ScrollArrow } from "../scrollArrow/ScrollArrow";
 

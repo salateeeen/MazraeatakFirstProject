@@ -15,7 +15,7 @@ export default function ContentSettings() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Title size="lg" mb="0.2rem">{CONTENTS[subSection].title}</Title>
+        <header><Title size="lg" mb="0.2rem">{CONTENTS[subSection].title}</Title></header>
         <p className={styles.description}>{CONTENTS[subSection].description}</p>
       </div>
       <PageComponent />

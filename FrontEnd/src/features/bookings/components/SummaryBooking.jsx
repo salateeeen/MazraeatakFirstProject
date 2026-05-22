@@ -17,7 +17,7 @@ export default function SummaryBooking({
 
   const { id } = useParams();
   const { handleSubmit, watch } = useFormContext();
-  const { mutate } = useCreateBooking(id);
+  const { mutate, isPending } = useCreateBooking(id);
   const { date, timeSlot, guests } = watch();
 
   function onSubmit(formData) {
@@ -32,7 +32,7 @@ export default function SummaryBooking({
       </div>
 
       <div className={styles.info}>
-        <Title>{farmName}</Title>
+        <header><Title>{farmName}</Title></header>
 
         <div className={styles.details}>
           <div className={styles.detailItem}>
@@ -63,7 +63,7 @@ export default function SummaryBooking({
         </div>
 
         <div className={styles.actionBtns}>
-          <Button type="submit" onClick={handleSubmit(onSubmit)}>
+          <Button type="submit" onClick={handleSubmit(onSubmit)} isPending={isPending}>
             Confirm Booking
           </Button>
           <Button secondary type="button" onClick={setPreviewOpen}>

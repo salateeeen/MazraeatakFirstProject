@@ -22,9 +22,9 @@ export default function AdminDashboard() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <Title size="xxl" subtitle="Welcome back! Here is what's happening with Mazreatak today.">
+        <header><Title size="xxl" subtitle="Welcome back! Here is what's happening with Mazreatak today.">
           Admin Overview
-        </Title>
+        </Title></header>
       </header>
 
       <div className={styles.grid}>

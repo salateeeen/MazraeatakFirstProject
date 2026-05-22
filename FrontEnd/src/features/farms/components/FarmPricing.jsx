@@ -24,9 +24,9 @@ const SLOT_CONFIG = {
 export default function FarmPricing({ pricing, timeSlots }) {
   return (
     <section className={styles.card}>
-      <Title mb="2rem" size="lg" className={styles.title}>
+      <header><Title mb="2rem" size="lg" className={styles.title}>
         Pricing & Time Slots
-      </Title>
+      </Title></header>
 
       <div className={styles.comparisonTable}>
         <div className={styles.tableHeader}>

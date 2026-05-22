@@ -1,7 +1,7 @@
 import Side from "@/ui/side/Side";
 import { SETTINGS } from "../config/MainSettings";
 import styles from "./Styles.module.css";
-import { useRole } from "@/hooks/useRole";
+import { useRole } from "@/features/user/hooks/useRole";
 import Title from "@/ui/title/Title";
 
 export default function MainSettings() {
@@ -12,7 +12,7 @@ export default function MainSettings() {
   
   return (
     <div className={styles.container}>
-      <Title size="lg" mb="0">Settings</Title>
+      <header><Title size="lg" mb="0">Settings</Title></header>
       <Side
         header={"Settings"}
         items={items.map((item) => ({

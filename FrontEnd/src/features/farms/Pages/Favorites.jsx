@@ -15,7 +15,7 @@ export default function Favorites() {
       error={error}
       title="No favorites yet"
       message="Mark your favorite farms to find them easily!"
-      header={<Title>Favorites</Title>}
+      header={<header><Title>Favorites</Title></header>}
     />
   );
 }

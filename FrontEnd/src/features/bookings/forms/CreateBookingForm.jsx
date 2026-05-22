@@ -24,7 +24,7 @@ export default function CreateBookingForm({
   return (
     <form className={styles.formContainer}>
       <div className={styles.formCard}>
-        <Title mb="0.5rem">Booking Info</Title>
+        <header><Title mb="0.5rem">Booking Info</Title></header>
         <div className={styles.dateWrapper}>
           <label>Select Date & Slot</label>
           <Button

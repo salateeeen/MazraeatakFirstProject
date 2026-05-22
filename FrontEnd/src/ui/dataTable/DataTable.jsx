@@ -2,6 +2,7 @@ import styles from "./DataTable.module.css";
 import EditButton from "@/ui/icons/EditButton";
 import DeleteButton from "@/ui/icons/DeleteButton";
 import Empty from "../empty/Empty";
+import Error from "../error/Error";
 
 export default function DataTable({ 
   columns, 
@@ -15,7 +16,7 @@ export default function DataTable({
 }) {
 
   if (isPending) return <Spinner size="lg" />;
-  if (error) return <Error message={error.message} />;
+  if (error) return <Error title={`Error when fetching ${resourceName}s`} message={error.message} />;
   if (!data?.length) return <Empty title={`No ${resourceName} found`} />;
 
   return (

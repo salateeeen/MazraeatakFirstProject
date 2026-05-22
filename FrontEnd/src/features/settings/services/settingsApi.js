@@ -46,3 +46,24 @@ export async function resetMySettings() {
   }
 }
 
+export async function updatePassword(body) {
+  try {
+    const res = await fetch(`${BASE_URL}/me/password`, {
+      method: "PATCH",
+      headers: getAuthHeaders(),
+      body: JSON.stringify(body),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.message);
+    }
+
+    return data;
+  } catch (err) {
+    throw err;
+  }
+}
+
+

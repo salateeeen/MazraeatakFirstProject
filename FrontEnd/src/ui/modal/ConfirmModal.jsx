@@ -2,7 +2,6 @@ import styles from "./ConfirmModal.module.css";
 import Button from "@/ui/button/Button";
 import { LuTriangleAlert } from "react-icons/lu";
 import Modal from "./Modal";
-import Spinner from "@/ui/spinner/Spinner";
 
 export default function ConfirmModal({ 
   title = "Are you sure?", 
@@ -29,15 +28,21 @@ export default function ConfirmModal({
         </div>
 
         <div className={styles.actions}>
-          <Button secondary onClick={onCancel} className={styles.button}>
+          <Button 
+            secondary 
+            onClick={onCancel} 
+            className={styles.button}
+            type="button"
+          >
             {cancelLabel}
           </Button>
           <Button 
             onClick={onConfirm} 
             className={`${styles.button} ${danger ? styles.dangerBtn : ""}`}
             isPending={isPending}
+            type="button"
           >
-            {isPending ? <Spinner size="xs" />: confirmLabel}
+            {confirmLabel}
           </Button>
         </div>
       </div>

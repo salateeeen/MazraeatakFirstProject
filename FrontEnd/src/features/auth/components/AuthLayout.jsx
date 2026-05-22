@@ -18,7 +18,7 @@ export default function AuthLayout({ title, children }) {
         <div className={styles.formWrapper}>
           <header className={styles.logo}>
             <MdVilla size={60} />
-            <Title size="xl">{title}</Title>
+            <header><Title size="xl">{title}</Title></header>
           </header>
           <div className={styles.formContent}>
             {children}

@@ -1,4 +1,9 @@
-import { createContext, useContext, useState, useCallback, useRef } from "react";
+import {
+  createContext,
+  useContext,
+  useCallback,
+  useRef,
+} from "react";
 import ConfirmModal from "@/ui/modal/ConfirmModal";
 import { useCloseComponents } from "@/hooks/useCloseComponents";
 
@@ -13,6 +18,8 @@ export function ConfirmProvider({ children }) {
       setConfig({
         ...options,
         onConfirm: () => {
+          // resolve for conditionaly running
+          // the code in the component that call this confirm modal
           resolve(true);
           setConfig(null);
         },
@@ -23,7 +30,6 @@ export function ConfirmProvider({ children }) {
       });
     });
   }, []);
-
 
   return (
     <ConfirmContext.Provider value={confirm}>
@@ -54,4 +60,3 @@ export function useConfirm() {
   }
   return context;
 }
-

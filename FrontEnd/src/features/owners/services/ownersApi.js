@@ -14,10 +14,7 @@ export const fetchMyOwnerRequest = () => {
 export const requestOwner = async (data) => {
   const res = await fetch(`${BASE_URL}/request-owner`, {
     method: "POST",
-    headers: {
-      ...getAuthHeaders(),
-      "Content-Type": "application/json",
-    },
+    headers: getAuthHeaders(),
     body: JSON.stringify(data),
   });
 

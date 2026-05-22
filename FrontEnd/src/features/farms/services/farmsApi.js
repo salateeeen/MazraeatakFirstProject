@@ -23,8 +23,8 @@ export const fetchFarmsLocations = function (filters) {
     return fetchFor(`${BASE_URL}/locations?${filters}`);
 };
 
-export const fetchFarmsName = function (name = "") {
-    return fetchFor(`${BASE_URL}/search?farmName=${name}`)
+export const fetchFarmsName = function (farmName) {
+    return fetchFor(`${BASE_URL}/search?farmName=${farmName}`)
 };
 
 export const fetchMyFarms = function () {

@@ -21,7 +21,7 @@ export default function BookingPreview({
         <div className={styles.iconWrapper}>
           <LuCheck size={32} className={styles.checkIcon} />
         </div>
-        <Title size="lg" className={styles.title}>Booking Preview</Title>
+        <header><Title size="lg" className={styles.title}>Booking Preview</Title></header>
         <p className={styles.subtitle}>Review your details before confirming</p>
       </div>
 

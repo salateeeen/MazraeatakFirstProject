@@ -2,6 +2,7 @@ const Review = require("../models/reviewModel");
 const Farm = require("../models/farmModel");
 const QueryClass = require("../query/query");
 const notificationService = require("./notificationService");
+const AppError = require("../error/AppError");
 
 const getReviewsForFarm = async (farmId, queryParams = {}) => {
   const query = new QueryClass(Review.find({ farm: farmId }), queryParams);

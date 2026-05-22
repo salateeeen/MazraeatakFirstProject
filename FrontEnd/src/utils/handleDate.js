@@ -1,17 +1,23 @@
 export function formatToRelativeTime(d) {
   const now = Date.now();
   const date = new Date(d);
-  const passedDays = Math.
-    floor((now - date.getTime()) / (1000 * 60 * 60 * 24));
+  const diff = now - date.getTime();
 
-  if (passedDays === 0) return "Today";
+  const mins = Math.floor(diff / (60 * 1000));
+  if (mins < 1) return "Just now";
+  if (mins < 60) return `${mins}m ago`;
+  
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  
+  const days = Math.floor(hrs / 24);
+  
+  if (days === 1) return "Yesterday";
 
-  if (passedDays === 1) return "Yesterday";
+  if (days < 7) return `${days} days ago`;
 
-  if (passedDays < 7) return `${passedDays} days ago`;
-
-  if (passedDays < 30) {
-    const weeks = Math.floor(passedDays / 7);
+  if (days < 30) {
+    const weeks = Math.floor(days / 7);
     return weeks === 1 ? "1 week ago" : `${weeks} weeks ago`;
   }
 
@@ -21,6 +27,7 @@ export function formatToRelativeTime(d) {
     year: "numeric"
   });
 }
+
 
 export function formatToDateTime(d) {
   const date = new Date(d);

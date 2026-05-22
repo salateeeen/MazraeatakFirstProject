@@ -16,7 +16,7 @@ export default function AllFarms() {
       error={error}
       title={"No farms available"}
       message={"Check back later for new farms!"}
-      header={<Title subtitle="Browse through the farms and find the perfect farm for you">Farms</Title>}
+      header={<header><Title subtitle="Browse through the farms and find the perfect farm for you">Farms</Title></header>}
     />
   );
 }

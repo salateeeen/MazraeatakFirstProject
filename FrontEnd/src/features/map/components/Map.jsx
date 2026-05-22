@@ -3,9 +3,9 @@ import "leaflet/dist/leaflet.css";
 import styles from "./Map.module.css";
 import OneMarker from "./OneMarker";
 import GetLocation from "./GetLocation";
-import { useDarkMode } from "@/context/useDarkModeToggle";
+import { useThemeMode } from "@/context/useThemeMode";
 import Markers from "./Markers";
-import { getStoredCoordinates } from "@/utils/handleLocation";
+import { useMapState } from "../hooks/useMapState";
 
 export default function Map({
   className = "",
@@ -15,54 +15,20 @@ export default function Map({
   center,
   zoom = 15,
 }) {
-  const { isDarkMode } = useDarkMode();
+  const { themeMode } = useThemeMode();
 
-  
-  const storedCoords = getStoredCoordinates();
-  
-
-  let normalizedMarkers = [];
-  if (Array.isArray(markers)) {
-    if (Array.isArray(markers[0])) {
-      normalizedMarkers = markers.filter(m => 
-        Array.isArray(m) && m.length >= 2 && 
-        m[0] !== null && m[0] !== undefined && 
-        m[1] !== null && m[1] !== undefined
-      );
-    } 
-    // If it's a single array [lat, lng]
-    else if (markers.length >= 2 && markers[0] !== null && markers[1] !== null) {
-      normalizedMarkers = [markers];
-    }
-  } 
-  // If it's an object {lat, lng}
-  else if (markers && typeof markers === 'object' && markers.lat !== undefined && markers.lng !== undefined) {
-    normalizedMarkers = [[markers.lat, markers.lng]];
-  }
-
-  // Determine center with ultimate fallback
-  const mapCenter = (center && Array.isArray(center) && center.length >= 2) 
-    ? center 
-    : (normalizedMarkers.length > 0 ? normalizedMarkers[0] : storedCoords);
-
-  const LIGHT_TILE = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-  const DARK_TILE = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
-
-  // Final safety check for mapCenter to prevent crash on mapCenter[0]
-  const safeCenter = (Array.isArray(mapCenter) && mapCenter.length >= 2 && mapCenter[0] !== null) 
-    ? mapCenter 
-    : defaultCoords;
+  const { normalizedMarkers, mapCenter, safeCenter, LIGHT_TILE, DARK_TILE } = useMapState(markers, center);
 
   return (
     <div className={`${styles.container} ${className}`}>
       <MapContainer
-        key={`${isDarkMode ? "dark" : "light"}-${safeCenter[0]}-${safeCenter[1]}`}
+        key={`${themeMode === "dark" ? "dark" : "light"}-${safeCenter[0]}-${safeCenter[1]}`}
         center={safeCenter}
         zoom={zoom}
         className={styles.map}
         boxZoom={true}
       >
-        <TileLayer url={isDarkMode ? DARK_TILE : LIGHT_TILE} />
+        <TileLayer url={themeMode === "dark" ? DARK_TILE : LIGHT_TILE} />
         
         {isEditable && <GetLocation onSelect={onSelect} />}
         

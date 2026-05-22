@@ -6,9 +6,9 @@ import { DayPicker } from "react-day-picker";
 export default function Calendar({ date, setValue, setDateModal }) {
   return (
     <div className={styles.calendarWrapper}>
-      <Title size="md" mb="1.5rem">
+      <header><Title size="md" mb="1.5rem">
         Select a Date
-      </Title>
+      </Title></header>
       <DayPicker
         mode="single"
         selected={date}

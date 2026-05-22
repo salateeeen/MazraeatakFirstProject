@@ -82,7 +82,7 @@ export default function AdminFacilities() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <Title size="xl" mb="0">Manage Facilities</Title>
+        <header><Title size="xl" mb="0">Manage Facilities</Title></header>
         <Button onClick={handleCloseModal} className={styles.addBtn}>
           <span className={styles.icon}><MdAdd /></span> 
           <span className={styles.text}>Add Facility</span>

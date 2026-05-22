@@ -12,7 +12,6 @@ import { useAddFarm } from "../hooks/useAddFarm";
 import { convertClockTimeToMinutes } from "@/utils/handleDate";
 import Stepper from "@/ui/stepper/Stepper";
 import Title from "@/ui/title/Title";
-import Spinner from "@/ui/spinner/Spinner";
 
 export default function AddFarmForm() {
   const { mutate: addFarm, isPending: isAdding } = useAddFarm();
@@ -73,9 +72,9 @@ export default function AddFarmForm() {
 
   return (
     <div className={styles.container}>
-      <Title subtitle="Complete the steps below to make your farm available for booking.">
+      <header><Title subtitle="Complete the steps below to make your farm available for booking.">
         List Your Farm
-      </Title>
+      </Title></header>
       <div className={styles.stepperAndForm}>
         <Stepper currentStep={step} totalSteps={4} setCurrentStep={setStep} />
 
@@ -119,13 +118,9 @@ export default function AddFarmForm() {
                   <Button
                     type="submit"
                     className={styles.button}
-                    disabled={isAdding}
+                    isPending={isAdding}
                   >
-                    {isAdding ? (
-                      <Spinner size="xs" color="#fff" />
-                    ) : (
-                      "Complete & Publish"
-                    )}
+                    Complete & Publish
                   </Button>
                 )}
               </div>

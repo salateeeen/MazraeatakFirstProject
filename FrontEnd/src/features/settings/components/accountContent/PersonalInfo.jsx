@@ -18,7 +18,7 @@ export default function PersonalInfo() {
   function onSubmit(formData) {
     const filteredData = Object.fromEntries(
       Object.entries(formData).filter(
-        ([key, value]) => value !== "" && value !== null && value !== undefined,
+        ([, value]) => value !== "" && value !== null && value !== undefined,
       ),
     );
     updateMe(filteredData);
@@ -54,8 +54,8 @@ export default function PersonalInfo() {
           label="Birthday"
           placeholder="Select your birthday"
         />
-        <Button type="submit" disabled={isUpdatingMe}>
-          {isUpdatingMe ? "Saving..." : 'Save'}
+        <Button type="submit" isPending={isUpdatingMe}>
+          Save
         </Button>
       </form>
     </FormProvider>

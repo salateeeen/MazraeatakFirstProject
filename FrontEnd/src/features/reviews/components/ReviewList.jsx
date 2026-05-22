@@ -9,9 +9,11 @@ export default function ReviewList({ reviews = [], isPending, error }) {
     <div className={styles.list}>
       {isPending &&
         Array.from({ length: 3 }, (_, i) => <ReviewCardSkeleton key={i} />)}
+        
       {!isPending && error && (
-        <Error message={error.message || "Failed to load reviews"} />
+        <Error title="Error while fetching reviews" message={error.message || "Failed to load reviews"} />
       )}
+      
       {!isPending && !error && reviews.length === 0 && (
         <Empty
           title="No reviews found"

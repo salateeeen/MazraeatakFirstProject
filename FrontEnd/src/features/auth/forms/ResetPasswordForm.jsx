@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import Input from "@/ui/forms/input/Input";
 import Button from "@/ui/button/Button";
 import { useResetPassword } from "../hooks/useResetPassword";
-import Spinner from "@/ui/spinner/Spinner";
 
 export default function ResetPasswordForm() {
   const resetForm = useForm({ mode: "onChange" });
@@ -38,8 +37,8 @@ export default function ResetPasswordForm() {
             placeholder="Confirm password"
             required
           />
-          <Button type="submit" disabled={!isValid || isLoading}>
-            {isLoading ? "Saving..." : "Reset Password"}
+          <Button type="submit" disabled={!isValid} isPending={isLoading}>
+            Reset Password
           </Button>
         </form>
       </FormProvider>

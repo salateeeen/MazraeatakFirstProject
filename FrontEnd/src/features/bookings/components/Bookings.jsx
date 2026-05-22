@@ -11,7 +11,7 @@ export default function Bookings({data, fetchingBookings, error}) {
   return (
     <Container className={styles.container}>
       <div className={styles.bookings}>
-        <Title size="lg" mb="1rem">Previous Bookings</Title>
+        <header><Title size="lg" mb="1rem">Previous Bookings</Title></header>
         <BookingsList
           data={past}
           isPending={fetchingBookings}
@@ -21,7 +21,7 @@ export default function Bookings({data, fetchingBookings, error}) {
       </div>
 
       <div className={styles.bookings}>
-        <Title size="lg" mb="1rem">Upcoming Bookings</Title>
+        <header><Title size="lg" mb="1rem">Upcoming Bookings</Title></header>
         <BookingsList
           data={upcoming}
           isPending={fetchingBookings}

@@ -10,30 +10,30 @@ import { useIsScrolledY } from "@/hooks/useIsScrolledY";
 import ResultFarmsName from "@/features/farms/components/ResultFarmsName";
 
 import NotificationBell from "@/features/notifications/components/NotificationBell";
+import { useSelector } from "react-redux";
+import { selectIsAuthenticated } from "@/features/user/userSlice";
 
 export default function Header() {
   
   const [isScrolled] = useIsScrolledY();
   const navigate = useNavigate();
   const location = useLocation();
-
+  
   const searchForm = useForm({
-    defaultValues: { search: "" },
-  });
-  const search = searchForm.watch("search");
-
-  const { data: farmsName = [], isPending } = useFarmsName(search, { 
-    enabled: search?.trim().length >= 2 
+    defaultValues: { farmName: "" },
   });
 
+  const farmName = searchForm.watch("farmName");
+
+  const { data: farmsName, isPending } = useFarmsName(farmName);
+  
   const isHome = location.pathname.includes("home");
-  const isLoggedIn = Boolean(localStorage.getItem("token"));
+  const isAuthenticated = useSelector(selectIsAuthenticated)
+  
 
   function handleSubmit(data) {
-    if (data.search.length <= 2) return;
-
     const params = new URLSearchParams();
-    params.set("farmName[regex]", data.search.toLowerCase());
+    params.set("farmName[regex]", data.farmName.toLowerCase());
 
     navigate(`/app/farms?${params.toString()}`);
     searchForm.reset();
@@ -57,22 +57,23 @@ export default function Header() {
   }
 
   return (
-    <header className={`${styles.header} ${!isHome ? styles.isNotHome : ""}`}>
+    <div className={`${styles.header} ${!isHome ? styles.isNotHome : ""}`}>
       <div onClick={handleLogo} className={styles.logo}>
         <MdOutlineVilla className={styles.icon} />
       </div>
       <h1>Mazraeatak</h1>
+
       <FormProvider {...searchForm}>
-        <form onSubmit={searchForm.handleSubmit(handleSubmit)}>
+        <form>
           <div
-          
             className={`${styles.search} ${isHome ? styles.isHome : ""} ${isScrolled ? styles.isScroll : ""}`}
           >
             <Search
               onSubmit={searchForm.handleSubmit(handleSubmit)}
               onSelect={handleSelectFarm}
-              results={farmsName.data}
-              search={search}
+              results={farmsName?.data}
+              searchName={"farmName"}
+              searchValue={farmName}
               isPending={isPending}
               placeholder={`Enter farm name…`}
               RenderItem={ResultFarmsName}
@@ -80,21 +81,23 @@ export default function Header() {
           </div>
         </form>
       </FormProvider>
+
       <div>
-        {isLoggedIn && 
+        {isAuthenticated && 
         <div className={styles.accountAndNotifications}>
           <NotificationBell />
           <Account />
         </div>
         }
-        {!isLoggedIn && (
+      
+        {!isAuthenticated && (
           <div className={styles.register}>
             <Button onClick={handleSignup}>Sign Up</Button>
             <Button onClick={handleLogin}>Log In</Button>
           </div>
         )}
       </div>
-    </header>
+    </div>
   );
 }
 

@@ -3,7 +3,6 @@ import { FormProvider, useForm } from "react-hook-form";
 import Input from "@/ui/forms/input/Input";
 import Button from "@/ui/button/Button";
 import { useRequestPasswordReset } from "../hooks/useRequestPasswordReset";
-import Spinner from "@/ui/spinner/Spinner";
 
 export default function ForgotPasswordForm() {
   const form = useForm({ mode: "onChange" });
@@ -27,8 +26,8 @@ export default function ForgotPasswordForm() {
           placeholder="Email, phone number, or username"
           required
         />
-        <Button type="submit" disabled={!isValid || isRequesting}>
-          {isRequesting ? <Spinner size="xs" color="#fff" /> : "Next"}
+        <Button type="submit" disabled={!isValid} isPending={isRequesting}>
+          Next
         </Button>
       </form>
     </FormProvider>

@@ -68,7 +68,8 @@ export default function AdminPendingOwners() {
       <Button 
         size="small" 
         onClick={() => approveMutation.mutate(item._id)}
-        disabled={approveMutation.isPending}
+        isPending={approveMutation.isPending && approveMutation.variables === item._id}
+        disabled={rejectMutation.isPending}
       >
         Approve
       </Button>
@@ -76,7 +77,8 @@ export default function AdminPendingOwners() {
         secondary
         size="small" 
         onClick={() => handleReject(item._id)}
-        disabled={rejectMutation.isPending}
+        isPending={rejectMutation.isPending && rejectMutation.variables === item._id}
+        disabled={approveMutation.isPending}
         style={{ color: "var(--color-red-600)" }}
       >
         Reject
@@ -87,7 +89,7 @@ export default function AdminPendingOwners() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <Title size="xl" mb="0">Pending Owner Requests</Title>
+        <header><Title size="xl" mb="0">Pending Owner Requests</Title></header>
       </header>
 
       <DataTable 
@@ -100,7 +102,7 @@ export default function AdminPendingOwners() {
       {isModalOpen && selectedOwner && (
         <Modal setOpen={setIsModalOpen} ref={modalRef} className={styles.detailsModal}>
           <div className={styles.modalBody}>
-            <Title size="lg" mb="1.5rem">Request Details</Title>
+            <header><Title size="lg" mb="1.5rem">Request Details</Title></header>
             
             <div className={styles.detailRow}>
               <strong>Business Name:</strong> <span>{selectedOwner.businessName}</span>
@@ -129,7 +131,8 @@ export default function AdminPendingOwners() {
                    approveMutation.mutate(selectedOwner._id);
                    setIsModalOpen(false);
                 }}
-                disabled={approveMutation.isPending}
+                isPending={approveMutation.isPending}
+                disabled={rejectMutation.isPending}
               >
                 Approve
               </Button>
@@ -139,7 +142,8 @@ export default function AdminPendingOwners() {
                   handleReject(selectedOwner._id);
                   setIsModalOpen(false);
                 }}
-                disabled={rejectMutation.isPending}
+                isPending={rejectMutation.isPending}
+                disabled={approveMutation.isPending}
               >
                 Reject
               </Button>

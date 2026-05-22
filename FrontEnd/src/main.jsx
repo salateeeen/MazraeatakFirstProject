@@ -5,15 +5,15 @@ import "./style/index.css";
 import "./style/form.css";
 import "./style/scrollbar.css";
 import "./style/colors.css";
-import { DarkModeProvider } from "./context/useDarkModeToggle";
 
+import { ThemeModeProvider } from "./context/useThemeMode.jsx";
 import { Provider } from "react-redux";
-import store from "./store/index.js";
+import store from "./store/store.js";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <DarkModeProvider>
+    <ThemeModeProvider>
       <App />
-    </DarkModeProvider>
+    </ThemeModeProvider>
   </Provider>,
 );

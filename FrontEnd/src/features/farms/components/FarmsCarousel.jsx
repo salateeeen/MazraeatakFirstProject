@@ -1,13 +1,10 @@
 import styles from "./FarmsCarousel.module.css";
 import { memo, useRef} from "react";
-import NoCardsYet from "@/ui/noCardsYet/NoCardsYet";
 import VerticalFarmCardSkeleton from "./VerticalFarmCardSkeleton";
 import { useFavoritesIds } from "../hooks/useFavoritesIds";
-
 import { ScrollArrow } from "@/ui/scrollArrow/ScrollArrow";
 import { useHorizontalScroll } from "@/hooks/useHorizontalScroll";
 import VerticalFarmCard from "./VerticalFarmCard";
-import Empty from "@/ui/empty/Empty";
 
 function FarmsCarousel({ isPending, farms = {}, error, title, message, header }) {
   const { data: favoritesIds } = useFavoritesIds();

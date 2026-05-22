@@ -15,7 +15,7 @@ export default function SectionSettings() {
 
   return (
     <div className={styles.container}>
-      <Title size="lg" mb="0.5rem">{SETTINGS_SECTIONS[section].title}</Title>
+      <header><Title size="lg" mb="0.5rem">{SETTINGS_SECTIONS[section].title}</Title></header>
       <Side
         items={SETTINGS_SECTIONS[section].items.map((item) => ({
           ...item,

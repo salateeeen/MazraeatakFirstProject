@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Input from "@/ui/forms/input/Input";
 import Button from "@/ui/button/Button";
 import { useLogin } from "../hooks/useLogin";
-import Spinner from "@/ui/spinner/Spinner";
 
 export default function LogInForm() {
   const navigate = useNavigate();
@@ -37,8 +36,8 @@ export default function LogInForm() {
         >
           Forgot Password?
         </p>
-        <Button type="submit" isPending={isLoggingIn} disabled={isLoggingIn}>
-          {isLoggingIn ? <Spinner size="xs" /> : "Log In"}
+        <Button type="submit" isPending={isLoggingIn}>
+          Log In
         </Button>
         <p className={styles.hint}>
           Don't have an account?{" "}

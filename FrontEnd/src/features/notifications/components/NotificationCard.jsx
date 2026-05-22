@@ -1,4 +1,3 @@
-import Button from "@/ui/button/Button";
 import styles from "./NotificationCard.module.css";
 import {
   MdEventNote,
@@ -6,9 +5,9 @@ import {
   MdRateReview,
   MdNotifications,
   MdCheckCircle,
-  MdDeleteOutline,
 } from "react-icons/md";
 import DeleteButton from "@/ui/icons/DeleteButton";
+import { formatToRelativeTime } from "@/utils/handleDate";
 
 function getNotificationIcon(content = "") {
   const lower = content.toLowerCase();
@@ -16,18 +15,6 @@ function getNotificationIcon(content = "") {
   if (lower.includes("booking") || lower.includes("booked")) return { Icon: MdEventNote, color: "blue" };
   if (lower.includes("review")) return { Icon: MdRateReview, color: "yellow" };
   return { Icon: MdNotifications, color: "green" };
-}
-
-function timeAgo(dateStr) {
-  if (!dateStr) return "";
-  const diff = Date.now() - new Date(dateStr).getTime();
-  const mins = Math.floor(diff / 60000);
-  if (mins < 1) return "Just now";
-  if (mins < 60) return `${mins}m ago`;
-  const hrs = Math.floor(mins / 60);
-  if (hrs < 24) return `${hrs}h ago`;
-  const days = Math.floor(hrs / 24);
-  return `${days}d ago`;
 }
 
 export default function NotificationCard({
@@ -50,7 +37,7 @@ export default function NotificationCard({
           {metadata?.timeSlot && (
             <span className={styles.slot}>{metadata.timeSlot}</span>
           )}
-          <span className={styles.time}>{timeAgo(createdAt)}</span>
+          <span className={styles.time}>{formatToRelativeTime(createdAt)}</span>
         </div>
       </div>
 

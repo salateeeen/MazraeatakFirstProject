@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchFarmsName } from "../services/farmsApi";
 
-export const useFarmsName = (filters, options = {}) => {
+export const useFarmsName = (farmName) => {
+ 
   return useQuery({
-    queryKey: ["farmsName", filters],
-    queryFn: () => fetchFarmsName(filters),
-    ...options
+    queryKey: ["farmsName", farmName],
+    queryFn: () => fetchFarmsName(farmName),
   });
 };

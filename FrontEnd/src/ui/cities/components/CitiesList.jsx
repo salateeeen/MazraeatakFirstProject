@@ -26,7 +26,7 @@ function CitiesList() {
 
   return (
     <div className={styles.container}>
-      <Title subtitle="Browse through the cities and find the perfect farm for you">Cities</Title>
+      <header><Title subtitle="Browse through the cities and find the perfect farm for you">Cities</Title></header>
       <div className={styles.wrapper}>
         <ScrollArrow
           className={styles.left}

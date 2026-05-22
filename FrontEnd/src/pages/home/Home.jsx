@@ -31,7 +31,7 @@ export default function Home() {
         isPending={isPending}
         error={error}
         header={
-          <Title subtitle="Discover the best farms for rent">Farms</Title>
+          <header><Title subtitle="Discover the best farms for rent">Farms</Title></header>
         }
       />
     </>

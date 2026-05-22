@@ -1,3 +1,4 @@
+import Spinner from "../spinner/Spinner";
 import styles from "./Button.module.css";
 
 export default function Button({
@@ -7,15 +8,16 @@ export default function Button({
   onClick,
   children,
   secondary,
+  isPending,
 }) {
   return (
     <button
       className={`${styles.btn} ${secondary ? styles.secondary : ""} ${className}`}
       type={type}
-      disabled={disabled}
+      disabled={disabled || isPending}
       onClick={onClick}
     >
-      {children}
+      {isPending ? <Spinner size="xs" /> : children}
     </button>
   );
 }

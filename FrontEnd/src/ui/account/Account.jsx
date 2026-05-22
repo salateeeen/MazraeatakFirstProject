@@ -12,8 +12,8 @@ import {
 import Button from "../button/Button";
 import { useCloseComponents } from "@/hooks/useCloseComponents";
 import { useNavigate } from "react-router-dom";
-import { useDarkMode } from "@/context/useDarkModeToggle";
-import { useRole } from "@/hooks/useRole";
+import { useThemeMode } from "@/context/useThemeMode";
+import { useRole } from "@/features/user/hooks/useRole";
 import { FaRegArrowAltCircleUp } from "react-icons/fa";
 import UserAvatar from "../profile/UserAvatar";
 import AvatarSkeleton from "../profile/AvatarSkeleton";
@@ -33,10 +33,13 @@ export default function Account() {
   const containerRef = useRef();
   const ChangeProfileRef = useRef();
   const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useCloseComponents(containerRef);
   const [changeProfileOpen, setChangeProfileOpen] =
     useCloseComponents(ChangeProfileRef);
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
+
+  const { themeMode, handleThemeMode } = useThemeMode();
+  
   const userData = useSelector(selectUser);
   const fullName = useSelector(selectUserFullName);
   const fetchingUser = useSelector(selectUserLoading);
@@ -73,6 +76,11 @@ export default function Account() {
     navigate("/admin/dashboard");
   }
 
+  function handleThemeModeClick(){
+    setIsOpen(false);
+    handleThemeMode(themeMode === "light" || themeMode === "system" ? "dark" : "light");
+  }
+
   if (fetchingUser) {
     return (
       <div className={styles.container} ref={containerRef}>
@@ -98,7 +106,10 @@ export default function Account() {
           <DropDown className={`${styles.dropdown}`}>
             <div className={styles.avatarLarge}>
               <UserAvatar user={userData} size="md" showName={false}>
-                <div className={styles.overlay} onClick={() => setChangeProfileOpen(true)}>
+                <div
+                  className={styles.overlay}
+                  onClick={() => setChangeProfileOpen(true)}
+                >
                   <LuCamera size={24} />
                 </div>
               </UserAvatar>
@@ -139,9 +150,9 @@ export default function Account() {
               </button>
             )}
 
-            <button className={styles.item} onClick={toggleDarkMode}>
-              {isDarkMode ? <LuSun size={16} /> : <LuMoon size={16} />}
-              {isDarkMode ? "Light mode" : "Dark mode"}
+            <button className={styles.item} onClick={handleThemeModeClick}>
+              {themeMode === "dark" ? <LuSun size={16} /> : <LuMoon size={16} />}
+              {themeMode === "dark" ? "Light mode" : "Dark mode"}
             </button>
 
             <div className={styles.divider} />
@@ -153,12 +164,13 @@ export default function Account() {
           </DropDown>
         )}
       </div>
+
       {changeProfileOpen && (
-        <Modal
-          setOpen={setChangeProfileOpen}
-          ref={ChangeProfileRef}
-        >
-          <ChangeProfilePicture user={userData} setOpen={setChangeProfileOpen} />
+        <Modal setOpen={setChangeProfileOpen} ref={ChangeProfileRef}>
+          <ChangeProfilePicture
+            user={userData}
+            setOpen={setChangeProfileOpen}
+          />
         </Modal>
       )}
     </>

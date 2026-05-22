@@ -6,19 +6,14 @@ import Spinner from "@/ui/spinner/Spinner";
 import Title from "@/ui/title/Title";
 import RecentBookings from "@/features/bookings/components/RecentBookings";
 import RecentReviews from "@/features/reviews/components/RecentReviews";
+import Error from "@/ui/error/Error";
 
 export default function OwnerDashboard() {
   const { data: dashboardData, isPending: fetchingDashboard, error } = useOwnerDashboard();
 
   if (fetchingDashboard) return <Spinner />;
 
-  if (error) {
-    return (
-      <div className={styles.error}>
-        {error.message || "Failed to load owner dashboard"}
-      </div>
-    );
-  }
+  if (error) return <Error title="Failed to load owner dashboard" message={error.message} />
   
   const payload = dashboardData?.data || {};
   const {
@@ -33,9 +28,9 @@ export default function OwnerDashboard() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <Title size="xxl" subtitle="Quick overview of your farms, bookings, and recent activity.">
+        <header><Title size="xxl" subtitle="Quick overview of your farms, bookings, and recent activity.">
           Owner Dashboard
-        </Title>
+        </Title></header>
       </header>
 
       <div className={styles.grid}>

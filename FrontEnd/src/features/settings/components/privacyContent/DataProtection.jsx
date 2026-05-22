@@ -3,7 +3,7 @@ import ToggleOption from "@/ui/forms/toggleOption/ToggleOption";
 import { useResetSettings } from "../../hooks/useResetSettings";
 import { useUpdateSettings } from "../../hooks/useUpdateSettings";
 import { useSettings } from "../../hooks/useSettings";
-import Spinner from "@/ui/spinner/Spinner";
+import Button from "@/ui/button/Button";
 
 export default function DataProtection() {
   const { data: settings } = useSettings();
@@ -32,14 +32,14 @@ export default function DataProtection() {
       />
 
       <div className={styles.actions}>
-        <button
+        <Button
           className={styles.danger}
           onClick={() => resetSettings()}
-          disabled={isPending}
+          isPending={isPending}
         >
-          {isPending ? <Spinner size="xs" /> : "Reset settings"}
-        </button>
+          Reset settings
+        </Button>
       </div>
     </div>
   );
-};
+}

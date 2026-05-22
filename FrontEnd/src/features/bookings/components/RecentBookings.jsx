@@ -25,8 +25,8 @@ function getInitials(user) {
 }
 
 export default function RecentBookings({ recentBookings = [], title = "Recent Bookings" }) {
-  const { mutate: confirmMutation } = useConfirmBooking();
-  const { mutate: cancelMutation } = useCancelBooking();
+  const { mutate: confirmMutation, isPending: isConfirming, variables: confirmingId } = useConfirmBooking();
+  const { mutate: cancelMutation, isPending: isCanceling, variables: cancelingId } = useCancelBooking();
 
 
   const handleConfirmBooking = (bookingId) => {
@@ -39,9 +39,9 @@ export default function RecentBookings({ recentBookings = [], title = "Recent Bo
 
   return (
     <section className={styles.section}>
-      <Title size="lg" mb="1.2rem">
+      <header><Title size="lg" mb="1.2rem">
         {title}
-      </Title>
+      </Title></header>
       
       {recentBookings.length === 0 ? (
         <Empty title="No Bookings" message="You don't have any bookings yet." />
@@ -80,12 +80,16 @@ export default function RecentBookings({ recentBookings = [], title = "Recent Bo
                   <Button
                     className={styles.confirmBtn}
                     onClick={() => handleConfirmBooking(b._id)}
+                    isPending={isConfirming && confirmingId === b._id}
+                    disabled={isCanceling}
                   >
                     Confirm
                   </Button>
                   <Button
                     className={styles.cancelBtn}
                     onClick={() => handleCancelBooking(b._id)}
+                    isPending={isCanceling && cancelingId === b._id}
+                    disabled={isConfirming}
                   >
                     Cancel
                   </Button>

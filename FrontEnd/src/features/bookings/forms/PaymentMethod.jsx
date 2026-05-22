@@ -15,7 +15,7 @@ export default function PaymentMethod({ name = "paymentMethod" }) {
 
   return (
     <div className={styles.paymentCard}>
-      <Title>Payment Method</Title>
+      <header><Title>Payment Method</Title></header>
       <div className={styles.paymentOptions}>
         {methods.map((method) => (
           <div

@@ -3,19 +3,19 @@ import { FormProvider, useForm } from "react-hook-form";
 import styles from "./Rate.module.css";
 import Button from "@/ui/button/Button";
 import Stars from "@/ui/stars/Stars";
-import CloseButton from "@/ui/icons/CloseButton";
 import TextArea from "@/ui/forms/textArea/TextArea";
 import { capitalizeFirstLetter } from "@/utils/handleStrings";
 import { useRate } from "../hooks/useRate";
 import Title from "@/ui/title/Title";
 
-export default function Rate({ setOpen, farmName, farmId }) {
+export default function Rate({farmName, farmId }) {
   const rateForm = useForm({
     defaultValues: {
       rating: 0,
       message: "sultan omar is the best...",
     },
   });
+
   const ratingValue = rateForm.watch("rating");
 
   const { mutate: createReview, isPending: isCreatingReview } = useRate();
@@ -25,10 +25,6 @@ export default function Rate({ setOpen, farmName, farmId }) {
     createReview({ farmId, data: formData });
   }
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   return (
     <div>
       <FormProvider {...rateForm}>
@@ -36,11 +32,10 @@ export default function Rate({ setOpen, farmName, farmId }) {
           className={styles.form}
           onSubmit={rateForm.handleSubmit(onSubmit)}
         >
-
           <div className={styles.header}>
-            <Title size="lg" mb="0.4rem" className={styles.title}>
+            <header><Title size="lg" mb="0.4rem" className={styles.title}>
               Review <span>{capitalizeFirstLetter(farmName)}</span>
-            </Title>
+            </Title></header>
             <p className={styles.subtitle}>Tell us what you think about your stay</p>
           </div>
 
@@ -57,9 +52,10 @@ export default function Rate({ setOpen, farmName, farmId }) {
           <Button
             type="submit"
             className={styles.submit}
-            disabled={!ratingValue || isCreatingReview}
+            disabled={!ratingValue}
+            isPending={isCreatingReview}
           >
-            {isCreatingReview ? "Submitting..." : "Submit Review"}
+            Submit Review
           </Button>
         </form>
       </FormProvider>
