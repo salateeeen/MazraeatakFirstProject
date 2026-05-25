@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Ajloun",
+    "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/ajloun_q8amtv.webp",
+    "location": {
+      "type": "Point",
+      "coordinates": [35.7528, 32.3326]
+    }
+  },
+  {
+    "name": "Amman",
+    "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/amman_gpxpbf.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [35.9304, 31.9539]
+    }
+  },
+  {
+    "name": "Dead Sea",
+    "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/deadsea_p8reoj.png",
+    "location": {
+      "type": "Point",
+      "coordinates": [35.4732, 31.559]
+    }
+  },
+  {
+    "name": "Irbid",
+    "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/irbid_tqd9lj.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [35.8515, 32.5556]
+    }
+  },
+  {
+    "name": "Jerash",
+    "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/jerash_vwrsp1.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [35.8961, 32.2744]
+    }
+  },
+  {
+    "name": "Petra",
+    "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/petra_kgjqbg.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [35.4444, 30.3285]
+    }
+  },
+  {
+    "name": "Wadi Rum",
+    "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/wadirum_xuksyg.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [35.4194, 29.5734]
+    }
+  },
+  {
+    "name": "Zarqa",
+    "image": "https://res.cloudinary.com/dexowwof5/image/upload/v1771470672/zarqa_jk3lbd.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [36.088, 32.0728]
+    }
+  }
+]

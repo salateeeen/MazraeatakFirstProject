@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 📏 Radius */
+  --radius-xs: 0.2rem;
+  --radius-sm: 0.4rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.8rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ⚙️ Layout */
+  --gap-xs: 0.25rem;
+  --gap-sm: 0.5rem;
+  --gap-md: 0.75rem;
+  --gap-lg: 1rem;
+  --gap-xl: 1.25rem;
+  --gap-2xl: 1.5rem;
+  --gap-3xl: 2rem;
+
+  /* Font */
+  --font-size-base: 20px;
+  --font-size-xs: clamp(0.65rem, 1.5vw, 0.7rem);
+  --font-size-sm: clamp(0.75rem, 1.5vw, 0.85rem);
+  --font-size-md: clamp(0.85rem, 2vw, 0.95rem);
+  --font-size-lg: clamp(1rem, 3vw, 1.2rem);
+  --font-size-xl: clamp(1.3rem, 4vw, 1.5rem);
+  --font-size-2xl: clamp(1.75rem, 3vw, 2rem);
+
+  /* Padding */
+  --pad-sm: 0.4rem;
+  --pad-md: 0.6rem;
+  --pad-lg: 0.8rem;
+  --pad-xl: 1rem;
+  --pad-2xl: 1.5rem;
+
+
+  /* Icons */
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-xl: 28px;
+
+  /*  States */
+  --hover-opacity: 0.75;
+
+  /* Layering (Z-Index) */
+  --z-negative: -1;
+  --z-base: 0;
+  --z-elevated: 10;
+  --z-sticky: 100;
+  --z-drawer: 1100;
+  --z-dropdown: 3000;
+  --z-modal: 9000;
+  --z-map: 3000;
+  --z-over-map: 3500;
+  --z-icons: 4500;
+  --z-toast: 9000;
+  --z-header: 8000;
+  --z-max: 10000;
+}
+
+html {
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-base);
+  font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+}
+
+body {
+  color: var(--text-heading);
+  background-color: var(--surface-page);
+  direction: ltr;
+}
+
+li {
+  list-style: none;
+}

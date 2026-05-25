@@ -1,0 +1,7 @@
+.mapSkeleton {
+  display: flex;
+  width: 100%;
+  min-height: 300px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}

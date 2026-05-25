@@ -1,0 +1,17 @@
+.composition {
+    position: relative;
+}
+
+.input::placeholder {
+     color: var(--text-muted);
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.5rem;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+}
