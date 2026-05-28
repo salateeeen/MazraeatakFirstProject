@@ -18,6 +18,16 @@ const getMe = handleAsyncError(async (req, res, next) => {
   });
 });
 
+const getProfile = handleAsyncError(async (req, res, next) => {
+  const { id } = req.params;
+  const profile = await userService.getProfile(id);
+
+  res.status(200).json({
+    status: "success",
+    data: profile,
+  });
+});
+
 const updateMe = handleAsyncError(async (req, res, next) => {
   const updatedMe = await userService.updateProfile(req.user.id, req.body);
 
@@ -86,6 +96,7 @@ const updateProfilePicture = handleAsyncError(async (req, res, next) => {
 module.exports = {
   getAllUsers,
   getMe,
+  getProfile,
   updateMe,
   addFavorite,
   updateEmail,

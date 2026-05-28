@@ -2,8 +2,6 @@ import Button from "@/ui/button/Button";
 import styles from "./SummaryBooking.module.css";
 import { LuCalendar, LuClock, LuUsers } from "react-icons/lu";
 import { useFormContext } from "react-hook-form";
-import { useCreateBooking } from "../hooks/useCreateBooking";
-import { useParams } from "react-router-dom";
 import Title from "@/ui/title/Title";
 
 export default function SummaryBooking({
@@ -12,21 +10,15 @@ export default function SummaryBooking({
   totalPrice,
   serviceFee = 5,
   setPreviewOpen,
+  onSubmit,
+  isPending,
 }) {
   const basePrice = totalPrice ? totalPrice - serviceFee : 0;
-
-  const { id } = useParams();
   const { handleSubmit, watch } = useFormContext();
-  const { mutate, isPending } = useCreateBooking(id);
   const { date, timeSlot, guests } = watch();
-
-  function onSubmit(formData) {
-    mutate({ ...formData, price: totalPrice });
-  }
 
   return (
     <div className={styles.card}>
-      
       <div className={styles.imageWrapper}>
         <img src={coverImage} alt={farmName} />
       </div>

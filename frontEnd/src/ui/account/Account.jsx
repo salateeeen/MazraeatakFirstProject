@@ -57,6 +57,11 @@ export default function Account() {
     navigate("/login");
   }
 
+  function handleProfile() {
+    setIsOpen(false);
+    navigate(`/app/profile/${userData?._id}`);
+  }
+
   function handleSettings() {
     setIsOpen(false);
     navigate("/app/settings/account");
@@ -81,25 +86,13 @@ export default function Account() {
     handleThemeMode(themeMode === "light" || themeMode === "system" ? "dark" : "light");
   }
 
-  if (fetchingUser) {
-    return (
-      <div className={styles.container} ref={containerRef}>
-        <div className={styles.profile}>
-          <AvatarSkeleton />
-        </div>
-      </div>
-    );
-  }
-
   return (
     <>
       <div className={styles.container} ref={containerRef}>
         <div className={styles.profile} onClick={handleOpen}>
-          {error ? (
-            <div className={styles.errorCircle}>Error</div>
-          ) : (
-            <UserAvatar user={userData} />
-          )}
+          {fetchingUser && <AvatarSkeleton />}
+          {error && <div className={styles.errorCircle}>Error</div>}
+          {!fetchingUser && !error && <UserAvatar user={userData} />}
         </div>
 
         {isOpen && (
@@ -119,7 +112,7 @@ export default function Account() {
 
             <div className={styles.divider} />
 
-            <button className={styles.item}>
+            <button className={styles.item} onClick={handleProfile}>
               <LuUser size={16} />
               View profile
             </button>

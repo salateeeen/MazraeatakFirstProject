@@ -108,7 +108,7 @@
 }
 
 .deleteBtn {
-  color: var(--error);
+  color: var(--text-error);
 }
 
 .deleteBtn:hover {

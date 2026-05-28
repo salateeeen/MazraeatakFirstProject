@@ -1,5 +1,7 @@
 const Booking = require("../models/bookingModel");
 const Farm = require("../models/farmModel");
+const Owner = require("../models/ownerModel");
+const Settings = require("../models/settingsModel");
 const QueryClass = require("../query/query");
 const AppError = require("../error/AppError");
 const { getNextSevenDays, formatToShortDate } = require("../utils/dates");
@@ -49,14 +51,29 @@ const getFarmBookings = async (farmId, queryParams = {}) => {
   return bookings;
 };
 
-
 const createBooking = async (userId, farmId, body) => {
-  const { timeSlot, date } = body;
+  const { timeSlot, date, ownerId } = body;
+
+  if (!ownerId) {
+    throw new AppError("Farm owner not found.", 404);
+  }
+
+  const settings = await Settings.findOne({ user: ownerId });
+  if (!settings) {
+    throw new AppError("Settings not found.", 404);
+  }
+
+  let status = "pending";
+  if (settings.ownerSettings.autoAcceptBookings) {
+    status = "confirmed";
+  }
+
   const booking = await Booking.create({
     user: userId,
     farm: farmId,
     date,
-    timeSlot
+    timeSlot,
+    status,
   });
 
   const populated = await Booking.findById(booking._id).populate({
@@ -64,14 +81,24 @@ const createBooking = async (userId, farmId, body) => {
     select: "farmOwner farmName",
   });
 
-  if (populated?.farm?.farmOwner) {
-    await notificationService.createNotification(
-      populated.farm.farmOwner,
-      "bookingUpdates",
-      `New booking for ${populated.farm.farmName} on ${new Date(date).toLocaleDateString()} (${timeSlot})`,
-      { bookingId: booking._id, timeSlot },
-    );
+  if (status === "confirmed") {
+    const owner = await Owner.findByIdAndUpdate(ownerId, {
+      $inc: { totalEarnings: booking.price },
+    }, {
+      new: true,
+      runValidators: true,
+    });
+    if (!owner) {
+      throw new AppError("Owner not found.", 404);
+    }
   }
+
+  await notificationService.createNotification(
+    ownerId,
+    "bookingUpdates",
+    `New booking for ${populated.farm.farmName} on ${new Date(date).toLocaleDateString()} (${timeSlot})`,
+    { bookingId: booking._id, timeSlot },
+  );
 
   return booking;
 };
@@ -79,10 +106,10 @@ const createBooking = async (userId, farmId, body) => {
 
 const confirmBooking = async (bookingId) => {
   const booking = await Booking.findByIdAndUpdate(bookingId)
-  .populate({
-    path: "farm",
-    select: "farmName",
-  });
+    .populate({
+      path: "farm",
+      select: "farmName farmOwner",
+    });
 
   if (!booking) {
     throw new AppError("No booking found with this ID.", 404);
@@ -99,6 +126,23 @@ const confirmBooking = async (bookingId) => {
   booking.toUpdate = true;
   booking.status = "confirmed";
   await booking.save({ validateModifiedOnly: true, });
+
+  if (!booking.farm.farmOwner) {
+    throw new AppError("Farm owner not found.", 404);
+  }
+
+  const ownerId = booking.farm.farmOwner._id || booking.farm.farmOwner;
+
+  const owner = await Owner.findOneAndUpdate({ user: ownerId }, {
+    $inc: { totalEarnings: booking.price },
+  }, {
+    new: true,
+    runValidators: true,
+  });
+
+  if (!owner) {
+    throw new AppError("Owner does not exist.", 404);
+  }
 
   const bookerId = booking.user?._id || booking.user;
 
@@ -117,10 +161,10 @@ const confirmBooking = async (bookingId) => {
 
 const cancelBooking = async (bookingId) => {
   const booking = await Booking.findByIdAndUpdate(bookingId)
-  .populate({
-    path: "farm",
-    select: "farmName",
-  });
+    .populate({
+      path: "farm",
+      select: "farmName",
+    });
 
   if (!booking) {
     throw new AppError("No booking found with this ID.", 404);

@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { createBooking as createBookingApi } from "../services/bookingsApi";
 import toast from "react-hot-toast";
 
-export function useCreateBooking(id) {
+export function useCreateBooking() {
   const navigate = useNavigate();
 
   return useMutation({
-    mutationFn: createBookingApi(id),
+    mutationFn: createBookingApi,
     onSuccess() {
       toast.success("Booking created successfully");
       setTimeout(() => {

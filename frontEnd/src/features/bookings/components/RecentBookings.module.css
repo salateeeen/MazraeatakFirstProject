@@ -131,9 +131,8 @@
 }
 
 .cancelBtn:hover {
-  background: var(--surface-error) !important;
-  color: var(--error) !important;
-  border-color: var(--error) !important;
+  background: var(--gradient-status-cancelled) !important;
+  color: var(--surface-error) !important;
   transform: translateY(-2px);
 }
 

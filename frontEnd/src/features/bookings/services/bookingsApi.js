@@ -13,36 +13,36 @@ export const fetchOwnerBookings = function () {
 
 
 
-export const createBooking = function (farmId) {
-    return async function (bookingData) {
-            const res = await fetch(`${BASE_URL}/create-booking/${farmId}`, {
-                method: `POST`,
-                headers: getAuthHeaders(),
-                body: JSON.stringify(bookingData)
-            });
+export const createBooking = async function (bookingData) {
+    const { farmId, ...rest } = bookingData;
+    const res = await fetch(`${BASE_URL}/create-booking/${farmId}`, {
+        method: `POST`,
+        headers: getAuthHeaders(),
+        body: JSON.stringify(rest)
+    });
 
-            if (!res.ok) throw await res.json();
-            return await res.json();
-    }
+    if (!res.ok) throw await res.json();
+    return await res.json();
 }
 
 
-export const cancleBooking = async (bookingId) => {
-        const res = await fetch(`${BASE_URL}/cancel-booking/${bookingId}`, {
-            method: `PATCH`,
-            headers: getAuthHeaders(),
-        });
 
-        if (!res.ok) throw await res.json();
-        return await res.json();
+export const cancleBooking = async (bookingId) => {
+    const res = await fetch(`${BASE_URL}/cancel-booking/${bookingId}`, {
+        method: `PATCH`,
+        headers: getAuthHeaders(),
+    });
+
+    if (!res.ok) throw await res.json();
+    return await res.json();
 };
 
 export const confirmBooking = async (bookingId) => {
-        const res = await fetch(`${BASE_URL}/confirm-booking/${bookingId}`, {
-            method: `PATCH`,
-            headers: getAuthHeaders(),
-        });
+    const res = await fetch(`${BASE_URL}/confirm-booking/${bookingId}`, {
+        method: `PATCH`,
+        headers: getAuthHeaders(),
+    });
 
-        if (!res.ok) throw await res.json();
-        return await res.json();
+    if (!res.ok) throw await res.json();
+    return await res.json();
 };

@@ -9,6 +9,17 @@ const getAllUsers = async (queryParams) => {
   return await query.filter().sort().query;
 }
 
+
+
+const getProfile = async (userId) => {
+  const user = await User.findById(userId).populate({
+    path: "favorites",
+    select: "farmName coverImage",
+  });
+  if (!user) throw new AppError("User not found", 404);
+  return user;
+};
+
 const updateProfile = async (userId, body) => {
   const allowedFields = [
     "firstName",
@@ -132,6 +143,7 @@ const updateProfilePicture = async (userId, file) => {
 
   return updatedUser;
 };
+
 
 module.exports = {
   getAllUsers,

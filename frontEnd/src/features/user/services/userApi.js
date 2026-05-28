@@ -8,6 +8,10 @@ export const fetchMe = function () {
     return fetchFor(`${BASE_URL}/me`);
 }
 
+export const fetchProfile = function (id) {
+    return fetchFor(`${BASE_URL}/profile/${id}`);
+}
+
 export const updateUserProfile = async (data) => {
     try {
         const res = await fetch(`${BASE_URL}/me`, {

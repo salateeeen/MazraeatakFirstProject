@@ -11,6 +11,7 @@ const router = express.Router()
 
 router.use(authController.protect)
 router.get(`/me`, userController.getMe);
+router.get(`/profile/:id`, userController.getProfile);
 router.get(`/favorites`, userController.getFavoritesIds);
 router.get(`/favorites-farms`, userController.getFavoritesFarms);
 router.post('/favorites/:farmId', userController.addFavorite)

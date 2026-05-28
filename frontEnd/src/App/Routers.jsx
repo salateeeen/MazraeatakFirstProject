@@ -32,6 +32,7 @@ import CreateBooking from "@/features/bookings/Pages/CreateBooking";
 import OwnerBookings from "@/features/bookings/Pages/OwnerBookings";
 import FileInput from "@/ui/forms/fileInput/FileInput";
 import RecentReviews from "@/features/reviews/components/RecentReviews";
+import Profile from "@/features/user/pages/Profile";
 
 export default function Routers() {
   return (
@@ -66,6 +67,7 @@ export default function Routers() {
             path="settings/:section?/:subSection?/:content?"
             element={<ProtectedRoute allowedRoles={["user", "owner", "admin"]}><Settings /></ProtectedRoute>}
           />
+          <Route path="profile/:id" element={<ProtectedRoute allowedRoles={["user", "owner", "admin"]}><Profile /></ProtectedRoute>}/>
         </Route>
 
         <Route

@@ -17,7 +17,6 @@ export default function AvailableSlotsTable({ isMyFarm, nextWeekAvailability = [
     navigate(`/app/create-booking/${id}?${searchParams.toString()}`);
   }
 
-
   return (
     <table className={styles.table}>
       <thead>

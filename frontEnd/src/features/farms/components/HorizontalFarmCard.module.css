@@ -162,7 +162,7 @@
 
 .oldPrice {
     text-decoration: line-through;
-    color: var(--error)
+    color: var(--text-error)
 }
 
 .price {

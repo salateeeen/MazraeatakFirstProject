@@ -93,15 +93,16 @@
         --rating-star: #ffca28;
 
         /* Error / destructive */
-        --error: #c91f1f;
-        --error-strong: #b91c1c;
+        --text-error: #c91f1f;
+        --text-error-strong: #b91c1c;
         --surface-error: #fee2e2;
         --surface-error-strong: #fecaca;
 
         /* Success (inline) */
         --surface-success: #e8f8ef;
-        --text-success: #1f9254;
         --surface-success-strong: #2f9e44;
+        --text-success: #1f9254;
+        --text-success-strong: #166534;
 
         /* Form / add-farm surfaces */
         --surface-form-card: #ffffff;
@@ -120,6 +121,7 @@
         /* Booking status gradients (keep for status pills) */
         --gradient-status-pending: linear-gradient(135deg, #FFC107, #FFB300);
         --gradient-status-confirmed: linear-gradient(135deg, #4CAF50, #388E3C);
+        --gradient-status-completed: linear-gradient(135deg, #2196F3, #1976D2);
         --gradient-status-info: linear-gradient(135deg, #2196F3, #1976D2);
         --gradient-status-cancelled: linear-gradient(135deg, #FF5252, #C62828);
         --gradient-highlight-warm: linear-gradient(to right, #FFEFBA, #fff7dc);
@@ -212,8 +214,8 @@
         --rating-star: #ffca28;
 
         /* Error */
-        --error: #f87171;
-        --error-strong: #ef4444;
+        --text-error: #f87171;
+        --text-error-strong: #ef4444;
         --surface-error: #450a0a;
         --surface-error-strong: #7f1d1d;
 
@@ -238,6 +240,7 @@
         --gradient-brand-dot: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
         --gradient-status-pending: linear-gradient(135deg, #FFC107, #FFB300);
         --gradient-status-confirmed: linear-gradient(135deg, #4CAF50, #388E3C);
+        --gradient-status-completed: linear-gradient(135deg, #2196F3, #1976D2);
         --gradient-status-info: linear-gradient(135deg, #2196F3, #1976D2);
         --gradient-status-cancelled: linear-gradient(135deg, #FF5252, #C62828);
         --gradient-highlight-warm: linear-gradient(to right, #422006, #78350f);
@@ -245,5 +248,3 @@
         --gradient-highlight-dark: linear-gradient(to right, #1e293b, #334155);
     }
 }
-
-

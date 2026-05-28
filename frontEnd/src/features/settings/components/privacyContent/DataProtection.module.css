@@ -27,10 +27,10 @@
 .danger {
   flex: 1;
   background-color: var(--surface-error);
-  color: var(--error);
+  color: var(--text-error);
 }
 
 .danger:hover {
   background-color: var(--surface-error-strong);
-  color: var(--error-strong);
+  color: var(--text-error-strong);
 }
