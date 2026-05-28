@@ -1,7 +1,7 @@
 import { useSettings } from "../../hooks/useSettings";
 import { useUpdateSettings } from "../../hooks/useUpdateSettings";
 import styles from "./InstantBooking.module.css";
-import ToggleOption from "@/ui/forms/toggleOption/ToggleOption";
+import ToggleCard from "@/ui/forms/optionCard/ToggleCard";
 
 export default function InstantBooking() {
   const { data:settings } = useSettings();
@@ -18,9 +18,9 @@ export default function InstantBooking() {
 
   return (
     <div className={styles.container}>
-      <ToggleOption
+      <ToggleCard
         title="Allow Instant Booking"
-        description="Allow guests to book your farm instantly."
+        description="Allow guests to book your chalet or villa instantly."
         checked={owner.allowInstantBooking}
         onChange={() =>
           handleToggle("allowInstantBooking", !owner.allowInstantBooking)

@@ -74,7 +74,7 @@
   right: 8px;
   width: 8px;
   height: 8px;
-  background-color: var(--text-error-strong);
+  background-color: var(--error-strong);
   border-radius: 50%;
   border: 2px solid var(--surface-card);
 }

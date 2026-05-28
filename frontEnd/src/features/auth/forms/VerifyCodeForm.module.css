@@ -43,8 +43,8 @@
 }
 
 .expires.low {
-    color: var(--text-error);
-    border-color: var(--text-error);
+    color: var(--error);
+    border-color: var(--error);
     background: var(--surface-error);
 }
 
@@ -86,12 +86,12 @@
 }
 
 .errorText {
-    color: var(--text-error);
+    color: var(--error);
     font-size: var(--font-size-xs);
     text-align: center;
     font-weight: 600;
     background: var(--surface-error);
     padding: var(--pad-sm);
     border-radius: var(--radius-sm);
-    border: 1px solid var(--text-error);
+    border: 1px solid var(--error);
 }

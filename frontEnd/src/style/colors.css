@@ -81,6 +81,7 @@
         --status-pending: #facc15;
         --status-confirmed: #22c55e;
         --status-cancelled: #ef4444;
+        --status-completed: #1790fa;
         --status-warning: #f59e0b;
         --status-info: #6366f1;
         --slot-border: #d1d5db;
@@ -92,8 +93,8 @@
         --rating-star: #ffca28;
 
         /* Error / destructive */
-        --text-error: #c91f1f;
-        --text-error-strong: #b91c1c;
+        --error: #c91f1f;
+        --error-strong: #b91c1c;
         --surface-error: #fee2e2;
         --surface-error-strong: #fecaca;
 
@@ -211,8 +212,8 @@
         --rating-star: #ffca28;
 
         /* Error */
-        --text-error: #f87171;
-        --text-error-strong: #ef4444;
+        --error: #f87171;
+        --error-strong: #ef4444;
         --surface-error: #450a0a;
         --surface-error-strong: #7f1d1d;
 

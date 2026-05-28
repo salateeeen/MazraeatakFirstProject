@@ -8,12 +8,15 @@
 
 :root {
   /* 📏 Radius */
-  --radius-xs: 0.2rem;
-  --radius-sm: 0.4rem;
-  --radius-md: 0.6rem;
-  --radius-lg: 0.8rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
+
+   --radius-base: 1;
+
+  --radius-xs: calc(0.2rem * var(--radius-base));
+  --radius-sm: calc(0.4rem * var(--radius-base));
+  --radius-md: calc(0.6rem * var(--radius-base));
+  --radius-lg: calc(0.8rem * var(--radius-base));
+  --radius-xl: calc(1rem * var(--radius-base));
+  --radius-2xl: calc(1.5rem * var(--radius-base));
   --radius-full: 9999px;
 
   /* ⚙️ Layout */
@@ -26,6 +29,8 @@
   --gap-3xl: 2rem;
 
   /* Font */
+
+
   --font-size-base: 20px;
   --font-size-xs: clamp(0.65rem, 1.5vw, 0.7rem);
   --font-size-sm: clamp(0.75rem, 1.5vw, 0.85rem);
@@ -71,6 +76,18 @@ html {
   font-family: var(--font-family-main);
   font-size: var(--font-size-base);
   font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+}
+
+html.small-font {
+  --font-size-base: 18px;
+}
+
+html.medium-font {
+  --font-size-base: 20px;
+}
+
+html.large-font {
+  --font-size-base: 22px;
 }
 
 body {

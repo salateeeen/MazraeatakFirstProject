@@ -72,8 +72,6 @@ export default function FileInput({
     else filesArray = [value];
   }
 
-
-
   return (
     <div>
       <div

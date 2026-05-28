@@ -26,14 +26,11 @@
 
 .danger {
   flex: 1;
-  padding: var(--pad-md);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
-  background-color: var(--surface-panel);
-  color: var(--text-error-strong);
-  cursor: pointer;
+  background-color: var(--surface-error);
+  color: var(--error);
 }
 
 .danger:hover {
-  background-color: var(--surface-error);
+  background-color: var(--surface-error-strong);
+  color: var(--error-strong);
 }

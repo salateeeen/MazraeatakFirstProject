@@ -132,8 +132,8 @@
 
 .cancelBtn:hover {
   background: var(--surface-error) !important;
-  color: var(--text-error) !important;
-  border-color: var(--text-error) !important;
+  color: var(--error) !important;
+  border-color: var(--error) !important;
   transform: translateY(-2px);
 }
 

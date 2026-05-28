@@ -68,9 +68,7 @@ export default function AddFarmForm() {
         },
       },
     };
-    // addFarm(payload);
-    console.log(step);
-    console.log(payload);
+    addFarm(payload);
   };
 
   return (

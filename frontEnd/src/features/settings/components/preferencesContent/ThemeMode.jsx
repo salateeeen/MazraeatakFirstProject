@@ -1,7 +1,5 @@
 import styles from "./ThemeMode.module.css";
-import RadioOption from "@/ui/forms/radioOption/RadioOption";
-import { useSettings } from "../../hooks/useSettings";
-import { useUpdateSettings } from "../../hooks/useUpdateSettings";
+import RadioCard from "@/ui/forms/optionCard/RadioCard";
 import { useThemeMode } from "@/context/useThemeMode";
 
 export default function ThemeMode() {
@@ -17,7 +15,7 @@ export default function ThemeMode() {
 
   return (
     <div className={styles.container}>
-      <RadioOption
+      <RadioCard
         name="theme"
         value="light"
         title="Light"
@@ -26,7 +24,7 @@ export default function ThemeMode() {
         onChange={() => handleRadioChange("theme", "light")}
       />
 
-      <RadioOption
+      <RadioCard
         name="theme"
         value="dark"
         title="Dark"
@@ -35,7 +33,7 @@ export default function ThemeMode() {
         onChange={() => handleRadioChange("theme", "dark")}
       />
 
-      <RadioOption
+      <RadioCard
         name="theme"
         value="system"
         title="Use system setting"

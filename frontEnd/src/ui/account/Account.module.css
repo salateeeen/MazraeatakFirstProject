@@ -88,12 +88,12 @@
   width: 100%;
   gap: 8px;
   background: var(--surface-error);
-  color: var(--text-error);
+  color: var(--error);
 }
 
 .logout:hover {
   background: var(--surface-error-strong);
-  color: var(--text-error-strong);
+  color: var(--error-strong);
 }
 
 .errorCircle {

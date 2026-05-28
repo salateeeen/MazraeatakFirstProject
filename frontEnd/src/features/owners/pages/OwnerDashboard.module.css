@@ -157,7 +157,7 @@
   padding: var(--pad-xl);
   border-radius: var(--radius-md);
   background: var(--surface-error);
-  color: var(--text-error-strong);
+  color: var(--error-strong);
   border: 1px solid var(--surface-error-strong);
   font-weight: 600;
   text-align: center;

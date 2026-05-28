@@ -71,8 +71,8 @@ export default function RequestOwner() {
           <div className={styles.grid}>
             <Input
               name="businessName"
-              label="Business Name"
-              placeholder="Enter your business name"
+              label="Property or Brand Name"
+              placeholder="e.g. Sunset Chalet, Royal Villa, or Brand Name"
               required
             />
             <Input
@@ -86,7 +86,7 @@ export default function RequestOwner() {
           <Input
             name="experience"
             label="Experience"
-            placeholder="Briefly describe your experience in managing farms"
+            placeholder="Briefly describe your experience in managing chalets and villas"
             required
           />
           

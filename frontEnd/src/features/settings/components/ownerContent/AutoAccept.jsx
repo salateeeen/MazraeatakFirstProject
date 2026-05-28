@@ -1,7 +1,7 @@
 import { useSettings } from "../../hooks/useSettings";
 import { useUpdateSettings } from "../../hooks/useUpdateSettings";
 import styles from "./AutoAccept.module.css";
-import ToggleOption from "@/ui/forms/toggleOption/ToggleOption";
+import ToggleCard from "@/ui/forms/optionCard/ToggleCard";
 
 export default function AutoAccept() {
   const { data:settings } = useSettings();
@@ -19,7 +19,7 @@ export default function AutoAccept() {
 
   return (
     <div className={styles.form}>
-      <ToggleOption
+      <ToggleCard
         title="Auto Accept Bookings"
         description="Automatically accept booking requests from guests."
         checked={owner.autoAcceptBookings}

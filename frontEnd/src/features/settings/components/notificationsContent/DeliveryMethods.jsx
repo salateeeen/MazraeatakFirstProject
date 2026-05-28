@@ -1,7 +1,7 @@
 import { useSettings } from "../../hooks/useSettings";
 import { useUpdateSettings } from "../../hooks/useUpdateSettings";
 import styles from "./DeliveryMethods.module.css";
-import ToggleOption from "@/ui/forms/toggleOption/ToggleOption";
+import ToggleCard from "@/ui/forms/optionCard/ToggleCard";
 
 export default function DeliveryMethods() {
   const { data: settings } = useSettings();
@@ -19,21 +19,21 @@ export default function DeliveryMethods() {
 
   return (
     <div className={styles.container}>
-      <ToggleOption
+      <ToggleCard
         title="Email notifications"
         description="Receive updates via email"
         checked={delivery.email}
         onChange={() => handleToggle("email", !delivery.email)}
       />
 
-      <ToggleOption
+      <ToggleCard
         title="Push notifications"
         description="Get notifications on your device"
         checked={delivery.push}
         onChange={() => handleToggle("push", !delivery.push)}
       />
 
-      <ToggleOption
+      <ToggleCard
         title="SMS notifications"
         description="Receive text messages"
         checked={delivery.sms}

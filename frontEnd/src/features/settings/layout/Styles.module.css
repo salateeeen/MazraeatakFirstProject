@@ -5,14 +5,6 @@
   flex-direction: column;
   gap: 1.25rem;
 }
-
-.container input {
-  height: 42px;
-  border-radius: var(--radius-md);
-  padding: 0 1rem;
-  font-size: var(--font-size-sm);
-}
-
 .container>h3 {
   align-self: center;
 }

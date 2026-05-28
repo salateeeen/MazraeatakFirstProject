@@ -3,7 +3,7 @@ import stepStyles from "./MainInfo.module.css";
 import Input from "@/ui/forms/input/Input";
 import TextArea from "@/ui/forms/textArea/TextArea";
 import CheckBoxFacilities from "@/ui/facilities/components/CheckBoxFacilities";
-import SelectCategory from "@/ui/categories/components/SelectCategory";
+import SelectCategory from "@/ui/categories/forms/SelectCategory";
 
 export default function MainInfo() {
   return (

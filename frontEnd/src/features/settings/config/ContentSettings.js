@@ -91,7 +91,7 @@ export const CONTENTS = {
   instantBooking: {
     component: InstantBooking,
     title: "Allow Instant Booking",
-    description: "Allow guests to book your farm instantly.",
+    description: "Allow guests to book your chalet or villa instantly.",
   },
   cancellationWindow: {
     component: CancellationWindow,
@@ -114,6 +114,6 @@ export const CONTENTS = {
    request: {
     component: RequestOwner,
     title: "Request to become an Owner",
-    description: "Fill out the form below to request to become a farm owner on our platform. We will review your request and get back to you soon.",
+    description: "Fill out the form below to request to become a chalet or villa owner on our platform. We will review your request and get back to you soon.",
   },
 };

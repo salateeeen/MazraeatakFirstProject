@@ -1,13 +1,13 @@
 import { useSettings } from "../../hooks/useSettings";
 import { useUpdateSettings } from "../../hooks/useUpdateSettings";
 import styles from "./PrivacyOverview.module.css";
-import ToggleOption from "@/ui/forms/toggleOption/ToggleOption";
+import ToggleCard from "@/ui/forms/optionCard/ToggleCard";
 
 export default function PrivacyOverview() {
-  const { data:settings } = useSettings(); // جلب settings من السيرفر
+  const { data:settings } = useSettings();
   const { mutate } = useUpdateSettings();
 
-  const privacy = settings.data?.privacy;
+  const privacy = settings?.data?.privacy;
 
   const handleToggle = (key, value) => {
     mutate({
@@ -15,13 +15,13 @@ export default function PrivacyOverview() {
     });
   };
 
-  if (!privacy) return null; // انتظار التحميل
+  if (!privacy) return null;
 
   return (
     <div className={styles.container}>
-      <ToggleOption
+      <ToggleCard
         title="Appear in listings/search"
-        description="Allow your farm to appear in search results"
+        description="Allow your chalet or villa to appear in search results"
         checked={privacy.appearInSearch}
         onChange={() =>
           handleToggle("appearInSearch", !privacy.appearInSearch)

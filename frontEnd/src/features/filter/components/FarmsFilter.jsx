@@ -103,9 +103,9 @@ function FarmsFilter() {
         }
       });
 
-      params.set("dailyPrice[gte]", minPrice);
+      params.set("basePrice[gte]", minPrice);
       if (!hasPlus) {
-        params.set("dailyPrice[lte]", maxPrice);
+        params.set("basePrice[lte]", maxPrice);
       }
     }
 

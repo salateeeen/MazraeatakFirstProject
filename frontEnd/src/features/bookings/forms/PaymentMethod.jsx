@@ -1,7 +1,8 @@
 import { useFormContext } from "react-hook-form";
-import styles from "./PaymentMethod.module.css";
+import SelectCard from "@/ui/forms/optionCard/SelectCard";
 import { FaCreditCard, FaMoneyBillWave, FaPaypal } from "react-icons/fa6";
 import Title from "@/ui/title/Title";
+import styles from "./PaymentMethod.module.css";
 
 export default function PaymentMethod({ name = "paymentMethod" }) {
   const methods = [
@@ -18,16 +19,13 @@ export default function PaymentMethod({ name = "paymentMethod" }) {
       <header><Title>Payment Method</Title></header>
       <div className={styles.paymentOptions}>
         {methods.map((method) => (
-          <div
+          <SelectCard
             key={method.value}
-            className={`${styles.paymentOption} ${
-              selected === method.value ? styles.active : ""
-            }`}
+            selected={selected === method.value}
             onClick={() => form.setValue(name, method.value)}
-          >
-            <span className={styles.paymentIcon}>{method.icon}</span>
-            <span className={styles.label}>{method.label}</span>
-          </div>
+            title={method.label}
+            icon={method.icon}
+          />
         ))}
       </div>
     </div>

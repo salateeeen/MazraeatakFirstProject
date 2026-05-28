@@ -40,7 +40,7 @@
 }
 
 .errorMessage {
-    color: var(--text-error);
+    color: var(--error);
     font-size: var(--font-size-xs);
     margin-top: 0.3rem;
     margin-inline-start: 0.3rem;
@@ -50,7 +50,7 @@
 
 .container:has(.errorMessage) .label::before {
     content: "* ";
-    color: var(--text-error);
+    color: var(--error);
 }
 
 
@@ -58,6 +58,6 @@
 .container:has(.errorMessage) input:focus,
 .container:has(.errorMessage) select:focus {
     outline: none;
-    border-color: var(--text-error);
+    border-color: var(--error);
     box-shadow: none;
 }

@@ -7,7 +7,7 @@
 }
 
 .error {
-  color: var(--text-error);
+  color: var(--error);
   padding: 12px;
   font-size: var(--font-size-sm);
 }

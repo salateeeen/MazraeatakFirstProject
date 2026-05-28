@@ -1,0 +1,43 @@
+/* ─── Checkbox ─── */
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border-input);
+
+  background-color: var(--surface-input);
+
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.checkbox::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.checkbox:checked::after {
+  transform: rotate(45deg) scale(1);
+}

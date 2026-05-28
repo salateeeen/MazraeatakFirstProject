@@ -141,7 +141,7 @@
 .oldPrice {
   text-decoration: line-through;
   font-size: var(--font-size-sm);
-  color: var(--text-error)
+  color: var(--error)
 }
 
 .price {

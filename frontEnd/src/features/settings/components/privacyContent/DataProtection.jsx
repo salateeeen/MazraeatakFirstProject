@@ -1,5 +1,5 @@
 import styles from "./DataProtection.module.css";
-import ToggleOption from "@/ui/forms/toggleOption/ToggleOption";
+import ToggleCard from "@/ui/forms/optionCard/ToggleCard";
 import { useResetSettings } from "../../hooks/useResetSettings";
 import { useUpdateSettings } from "../../hooks/useUpdateSettings";
 import { useSettings } from "../../hooks/useSettings";
@@ -22,7 +22,7 @@ export default function DataProtection() {
 
   return (
     <div className={styles.container}>
-      <ToggleOption
+      <ToggleCard
         title="Two-factor authentication"
         description="Add an extra layer of security to your account"
         checked={security.twoFactorAuth || false}

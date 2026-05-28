@@ -1,0 +1,93 @@
+/* ─── Shared Card Base ─── */
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: var(--gap-md);
+
+  padding: var(--pad-md) var(--pad-lg);
+
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+
+  background-color: var(--surface-card);
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.card:hover:not(.disabled) {
+  border-color: var(--accent-soft);
+  background-color: var(--surface-input-active);
+  transform: translateY(-1px);
+}
+
+.active {
+  border-color: var(--accent);
+  background-color: var(--surface-input-active);
+  box-shadow: var(--shadow-soft);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── Layout ─── */
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+  flex: 1;
+  min-width: 0;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--text-icon);
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.active .iconWrapper {
+  color: var(--accent);
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.description {
+  font-size: var(--font-size-xs);
+  line-height: 1.4;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.controlWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

@@ -1,5 +1,5 @@
 import styles from "./NotificationTypes.module.css";
-import ToggleOption from "@/ui/forms/toggleOption/ToggleOption";
+import ToggleCard from "@/ui/forms/optionCard/ToggleCard";
 import { useSettings } from "../../hooks/useSettings";
 import { useUpdateSettings } from "../../hooks/useUpdateSettings";
 
@@ -17,35 +17,35 @@ export default function NotificationTypes() {
 
   return (
     <div className={styles.container}>
-      <ToggleOption
+      <ToggleCard
         title="Bookings"
         description="Updates about your bookings and reservations"
         checked={types?.bookingUpdates}
         onChange={() => handleToggle("bookingUpdates", !types?.bookingUpdates)}
       />
 
-      <ToggleOption
+      <ToggleCard
         title="Promotions"
         description="Offers, discounts, and announcements"
         checked={types?.promotions}
         onChange={() => handleToggle("promotions", !types?.promotions)}
       />
 
-      <ToggleOption
+      <ToggleCard
         title="Booking reminders"
         description="Reminders about your upcoming bookings"
         checked={types?.bookingReminders}
         onChange={() => handleToggle("bookingReminders", !types?.bookingReminders)}
       />
 
-      <ToggleOption
+      <ToggleCard
         title="Payment updates"
         description="Updates about your payments and transactions"
         checked={types?.paymentUpdates}
         onChange={() => handleToggle("paymentUpdates", !types?.paymentUpdates)}
       />
 
-      <ToggleOption
+      <ToggleCard
         title="Review reminders"
         description="Reminders about your upcoming bookings"
         checked={types?.reviewReminders}

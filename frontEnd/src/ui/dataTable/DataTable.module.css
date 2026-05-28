@@ -91,12 +91,12 @@
 }
 
 .deleteAction {
-  color: var(--text-error);
+  color: var(--error);
 }
 
 .deleteAction:hover {
   background: var(--surface-error);
-  color: var(--text-error-strong);
+  color: var(--error-strong);
 }
 
 .empty {

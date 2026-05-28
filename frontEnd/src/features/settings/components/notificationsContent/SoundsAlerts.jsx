@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./SoundsAlerts.module.css";
-import ToggleOption from "@/ui/forms/toggleOption/ToggleOption";
+import ToggleCard from "@/ui/forms/optionCard/ToggleCard";
 import { useUpdateSettings } from "../../hooks/useUpdateSettings";
 import { useSettings } from "../../hooks/useSettings";
 
@@ -17,7 +17,7 @@ export default function SoundsAlerts() {
 
   return (
     <div className={styles.container}>
-      <ToggleOption
+      <ToggleCard
         title="Sound Alerts"
         description="Enable or disable sound notifications for messages and alerts."
         checked={soundAlerts}

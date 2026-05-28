@@ -1,8 +1,8 @@
-import Button from "@/ui/button/Button";
 import Input from "@/ui/forms/input/Input";
 import Title from "@/ui/title/Title";
+import SelectCard from "@/ui/forms/optionCard/SelectCard";
 import { LuCalendarDays, LuSun, LuMoon, LuSunrise } from "react-icons/lu";
-import styles from "./CreateBookingForm.module.css"; // تأكدي المسار صح حسب فولدراتك
+import styles from "./CreateBookingForm.module.css";
 import PaymentMethod from "./PaymentMethod";
 import { useFormContext } from "react-hook-form";
 
@@ -25,31 +25,29 @@ export default function CreateBookingForm({
     <form className={styles.formContainer}>
       <div className={styles.formCard}>
         <header><Title mb="0.5rem">Booking Info</Title></header>
+
         <div className={styles.dateWrapper}>
-          <label>Select Date & Slot</label>
-          <Button
-            type="button"
-            onClick={() => setDateModal(true)}
+          <label className={styles.label}>Select Date & Slot</label>
+          <SelectCard
             className={styles.dateBtn}
-          >
-            <LuCalendarDays size={20} />{" "}
-            {date ? date.toLocaleDateString() : "Pick a date"}
-          </Button>
+            title={date ? date.toLocaleDateString() : "Pick a date"}
+            icon={<LuCalendarDays size={20} />}
+            onClick={() => setDateModal(true)}
+            selected={date}
+          />
         </div>
 
         <div className={styles.slotGrid}>
           {slots.map((slot) => (
-            <button
+            <SelectCard
               key={slot.value}
-              type="button"
               disabled={!availability[slot.value]}
-              className={`${styles.slotCard} ${
-                timeSlot === slot.value ? styles.active : ""
-              }`}
+              selected={timeSlot === slot.value}
               onClick={() => setValue("timeSlot", slot.value)}
-            >
-              {slot.icon} {slot.label}
-            </button>
+              title={slot.label}
+              icon={slot.icon}
+              className={styles.slot}
+            />
           ))}
         </div>
         <Input type="number" name="guests" label="Guests" min={1} />

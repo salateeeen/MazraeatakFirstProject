@@ -45,17 +45,15 @@
   background-color: var(--surface-raised);
   color: var(--accent);
   border-color: var(--border-subtle);
-}
+  border-color: var(--text-success-strong);
 
-.danger {
-  color: var(--text-error);
 }
 
 .danger:hover,
 .closeCancel:hover {
   background-color: var(--surface-error);
-  color: var(--text-error-strong);
-  border-color: var(--text-error);
+  color: var(--error-strong);
+  border-color: var(--error);
 }
 
 .success {
@@ -65,6 +63,7 @@
 .success:hover {
   background-color: var(--surface-success);
   color: var(--text-success-strong);
+  border-color: var(--text-success-strong);
 }
 
 .ghost:hover {

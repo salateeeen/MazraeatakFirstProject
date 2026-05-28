@@ -3,61 +3,221 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: transparent;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 .dayPicker {
-  --rdp-cell-size: 3.5rem;
+  /* Design Tokens mapped to react-day-picker v9 variables */
   --rdp-accent-color: var(--accent);
-  --rdp-background-color: var(--surface-raised);
-  --rdp-outline: 2px solid var(--accent);
-  --rdp-outline-selected: 2px solid var(--accent);
+  --rdp-accent-background-color: var(--surface-card-hover);
+  --rdp-day-height: 44px;
+  --rdp-day-width: 44px;
+  --rdp-day_button-height: 40px;
+  --rdp-day_button-width: 40px;
+  --rdp-day_button-border-radius: 50%;
+  --rdp-today-color: var(--accent);
+  --rdp-selected-border: 2px solid var(--accent);
+  --rdp-nav-height: 2.75rem;
+
   margin: 0;
-  font-family: inherit;
+  font-family: 'Roboto', 'Montserrat', sans-serif;
   color: var(--text-heading);
 }
 
-.dayPicker :global(.rdp-day_selected) {
-  background-color: var(--accent) !important;
-  color: #fff !important;
-  font-weight: 700;
-  border-radius: var(--radius-md) !important;
-  border: 1px solid var(--accent) !important;
-  outline: none !important;
-  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3) !important;
+/* Root component container */
+.dayPicker :global(.rdp-root) {
+  position: relative;
+  width: 100%;
 }
 
-.dayPicker :global(.rdp-day:hover:not(.rdp-day_selected)) {
-  background-color: var(--surface-raised) !important;
-  color: var(--accent) !important;
-  border-radius: var(--radius-md) !important;
+.dayPicker :global(.rdp-months) {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.dayPicker :global(.rdp-button:focus:not(:active)) {
-  outline: none !important;
-  box-shadow: none !important;
-  border: 1px solid var(--accent);
-  border-radius: var(--radius-md) !important;
+.dayPicker :global(.rdp-month) {
+  width: 100%;
+  background: transparent;
+}
+
+/* Month & Year Header Area */
+.dayPicker :global(.rdp-month_caption) {
+  display: flex;
+  align-items: center;
+  height: var(--rdp-nav-height);
+  padding: 0 0.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .dayPicker :global(.rdp-caption_label) {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
   color: var(--text-heading);
   text-transform: capitalize;
+  letter-spacing: -0.015em;
 }
 
-.dayPicker :global(.rdp-head_cell) {
-  font-size: 0.8rem;
+/* Navigation Toolbar */
+.dayPicker :global(.rdp-nav) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  height: var(--rdp-nav-height);
+}
+
+.dayPicker :global(.rdp-button_previous),
+.dayPicker :global(.rdp-button_next) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--text-muted);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dayPicker :global(.rdp-button_previous:hover),
+.dayPicker :global(.rdp-button_next:hover) {
+  color: var(--accent) !important;
+  background: var(--surface-card-hover) !important;
+  border-color: var(--accent-soft) !important;
+  transform: scale(1.05);
+}
+
+.dayPicker :global(.rdp-button_previous:active),
+.dayPicker :global(.rdp-button_next:active) {
+  transform: scale(0.95);
+}
+
+/* Ensure chevrons match custom button hover state color */
+.dayPicker :global(.rdp-chevron) {
+  fill: currentColor !important;
+  transition: fill 0.2s ease;
+}
+
+/* Calendar Grid Table */
+.dayPicker :global(.rdp-month_grid) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+/* Weekday header cells (th) */
+.dayPicker :global(.rdp-weekday) {
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
-  padding-bottom: 1rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.5rem 0;
+  width: var(--rdp-day-width);
+  height: 2rem;
+  opacity: 0.8;
 }
 
+/* Day cell wrapper (td) - DO NOT set display: inline-flex! Keep standard table layout */
+.dayPicker :global(.rdp-day) {
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  width: var(--rdp-day-width);
+  height: var(--rdp-day-height);
+}
 
+/* Day Clickable Button inside td */
+.dayPicker :global(.rdp-day_button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--rdp-day_button-width);
+  height: var(--rdp-day_button-height);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-body);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--rdp-day_button-border-radius);
+  cursor: pointer;
+  margin: auto;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
 
-.dayPicker :global(.rdp-today) {
+/* Day Hover state */
+.dayPicker :global(.rdp-day_button:hover:not(:disabled)) {
+  background-color: var(--surface-card-hover) !important;
   color: var(--accent) !important;
-  border: 1px solid var(--accent) !important;
-  border-radius: var(--radius-full) !important;
+  font-weight: 600;
+  transform: scale(1.08);
+  border-color: var(--border-subtle);
+}
+
+/* Selected Day state */
+.dayPicker :global(.rdp-selected) :global(.rdp-day_button) {
+  background: var(--gradient-brand) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  box-shadow: var(--shadow-accent-soft) !important;
+  border-color: transparent !important;
+  transform: scale(1.05);
+}
+
+.dayPicker :global(.rdp-selected) :global(.rdp-day_button:hover) {
+  background: var(--gradient-brand) !important;
+  color: #ffffff !important;
+  transform: scale(1.08);
+}
+
+/* Today state */
+.dayPicker :global(.rdp-today:not(.rdp-selected)) :global(.rdp-day_button) {
+  color: var(--accent) !important;
+  font-weight: 700;
+  border: 1.5px solid var(--accent) !important;
+  background-color: var(--surface-raised) !important;
+}
+
+/* Elegant dot on selected today */
+.dayPicker :global(.rdp-today.rdp-selected) :global(.rdp-day_button)::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+/* Outside & Disabled days state */
+.dayPicker :global(.rdp-outside) :global(.rdp-day_button) {
+  color: var(--text-muted) !important;
+  opacity: 0.35;
+}
+
+.dayPicker :global(.rdp-disabled) :global(.rdp-day_button) {
+  color: var(--text-muted) !important;
+  opacity: 0.15;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* Focus and Outline accessibility */
+.dayPicker :global(.rdp-day_button:focus-visible) {
+  outline: 2px solid var(--accent-soft) !important;
+  outline-offset: -2px;
 }

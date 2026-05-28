@@ -4,36 +4,13 @@
   gap: 0.8rem;
 }
 
-.section h4 {
+.title {
   font-size: var(--font-size-md);
   font-weight: 600;
   margin-bottom: 10px;
 }
-
 .options {
-  display: flex;
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-md);
 }
-
-.options button {
-  flex: 1;
-  padding: var(--pad-md) 0;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
-  background-color: var(--surface-panel);
-  font-size: var(--font-size-sm);
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.options button:hover {
-  border-color: var(--accent-soft);
-}
-
-.options button.active {
-  border-color: var(--accent-soft);
-  background-color: var(--surface-input-active);
-  color: var(--accent);
-  font-weight: 600;
-}
-

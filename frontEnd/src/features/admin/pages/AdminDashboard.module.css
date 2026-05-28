@@ -69,7 +69,7 @@
 }
 
 .error {
-  color: var(--text-error-strong);
+  color: var(--error-strong);
   background: var(--surface-error);
   padding: var(--pad-2xl);
   text-align: center;

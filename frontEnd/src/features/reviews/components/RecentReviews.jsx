@@ -2,13 +2,28 @@ import Empty from "@/ui/empty/Empty";
 import styles from "./RecentReviews.module.css";
 import Title from "@/ui/title/Title";
 import { LuStar } from "react-icons/lu";
+import Spinner from "@/ui/spinner/Spinner";
+import Error from "@/ui/error/Error";
+import { useOwnerDashboard } from "@/features/owners/hooks/useOwnerDashboard";
 
 function getInitials(user) {
   if (!user) return "??";
   return `${user.firstName?.charAt(0) || ""}${user.lastName?.charAt(0) || ""}`.toUpperCase();
 }
 
-export default function RecentReviews({ recentReviews = [] }) {
+export default function RecentReviews() {
+  const { data: dashboardData, isPending: fetchingDashboard, error } = useOwnerDashboard();
+
+  if (fetchingDashboard) return <Spinner />;
+
+  if (error) return <Error title="Failed to load owner dashboard" message={error.message} />
+  
+  const payload = dashboardData?.data || {};
+  const {
+    recentReviews = [],
+  } = payload;
+
+
   return (
     <section className={styles.section}>
       <header><Title size="lg" mb="1.2rem">

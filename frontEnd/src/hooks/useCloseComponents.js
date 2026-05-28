@@ -1,29 +1,31 @@
 import { useEffect, useState } from "react";
 
-export const useCloseComponents = (ref, initialState = false) => {
+export function useCloseComponents(ref, initialState = false) {
   const [open, setOpen] = useState(initialState);
 
   useEffect(() => {
-    
-    function handleClose(e) {
-      if (e.key === "Escape") {
-        setOpen(false);
-        return;
-      }
+    if (!open) return;
 
-      if (open && ref.current && !ref.current.contains(e.target)) {
+    function handleClickOutside(e) {
+      if (ref.current && !ref.current.contains(e.target)) {
         setOpen(false);
       }
     }
 
-    window.addEventListener("mousedown", handleClose);
-    window.addEventListener("keydown", handleClose);
+    function handleEscape(e) {
+      if (e.key === "Escape") {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
-      window.removeEventListener("mousedown", handleClose);
-      window.removeEventListener("keydown", handleClose);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [open, ref]);
 
   return [open, setOpen];
-};
+}
