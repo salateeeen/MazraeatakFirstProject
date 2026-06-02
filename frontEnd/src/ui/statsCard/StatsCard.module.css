@@ -30,9 +30,9 @@
   align-items: center;
   justify-content: center;
   background: var(--icon-bg, var(--surface-raised));
-  color: var(--card-color, var(--accent));
   transition: all 0.3s ease;
 }
+
 
 .card:hover .iconContainer {
   transform: scale(1.08);
@@ -40,9 +40,16 @@
 }
 
 .icon {
+  color: var(--card-color, var(--accent));
   width: var(--icon-xl);
   height: var(--icon-xl);
 }
+
+.icon.fill {
+  fill: var(--card-color, var(--accent));
+}
+
+
 
 .body {
   display: flex;

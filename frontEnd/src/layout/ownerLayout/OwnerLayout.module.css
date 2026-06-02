@@ -1,3 +1,4 @@
+@import "../../styles/breakpoints.css";
 .container {
   display: flex;
   min-height: 100vh;
@@ -31,7 +32,7 @@
   position: relative;
 }
 
-@media (max-width: 1024px) {
+@media (--laptop) {
   .overlay {
     display: block;
     position: fixed;
@@ -46,7 +47,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (--mobile) {
   .content {
     padding: var(--pad-lg);
   }

@@ -1,3 +1,4 @@
+@import "../../styles/breakpoints.css";
 .nav {
   background: var(--gradient-brand);
   color: var(--on-accent);
@@ -84,7 +85,7 @@
 }
 
 /* Responsiveness: Bottom Nav for Mobile */
-@media (max-width: 767px) {
+@media (--tablet) {
   .nav {
     position: fixed;
     bottom: 0;
@@ -139,7 +140,7 @@
 }
 
 /* Dark Mode Mobile */
-@media (max-width: 767px) {
+@media (--tablet) {
   :global(.dark) .nav {
     background: var(--surface-panel);
   }

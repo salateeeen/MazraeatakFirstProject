@@ -1,10 +1,10 @@
 import { createRoot } from "react-dom/client";
 
 import App from "./App/App.jsx";
-import "./style/index.css";
-import "./style/form.css";
-import "./style/scrollbar.css";
-import "./style/colors.css";
+import "./styles/index.css";
+import "./styles/form.css";
+import "./styles/scrollbar.css";
+import "./styles/colors.css";
 
 import { ThemeModeProvider } from "./context/useThemeMode.jsx";
 import { Provider } from "react-redux";

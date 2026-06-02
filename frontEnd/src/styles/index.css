@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@600&display=swap');
 
+
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +10,13 @@
 :root {
   /* 📏 Radius */
 
-   --radius-base: 1;
-
-  --radius-xs: calc(0.2rem * var(--radius-base));
-  --radius-sm: calc(0.4rem * var(--radius-base));
-  --radius-md: calc(0.6rem * var(--radius-base));
-  --radius-lg: calc(0.8rem * var(--radius-base));
-  --radius-xl: calc(1rem * var(--radius-base));
-  --radius-2xl: calc(1.5rem * var(--radius-base));
+  --radius-base: 1rem;
+  --radius-xs: calc(0.2 * var(--radius-base));
+  --radius-sm: calc(0.4 * var(--radius-base));
+  --radius-md: calc(0.6 * var(--radius-base));
+  --radius-lg: calc(0.8 * var(--radius-base));
+  --radius-xl: calc(1 * var(--radius-base));
+  --radius-2xl: calc(1.5 * var(--radius-base));
   --radius-full: 9999px;
 
   /* ⚙️ Layout */
@@ -29,17 +29,16 @@
   --gap-3xl: 2rem;
 
   /* Font */
-
-
   --font-size-base: 20px;
-  --font-size-xs: clamp(0.65rem, 1.5vw, 0.7rem);
-  --font-size-sm: clamp(0.75rem, 1.5vw, 0.85rem);
-  --font-size-md: clamp(0.85rem, 2vw, 0.95rem);
-  --font-size-lg: clamp(1rem, 3vw, 1.2rem);
-  --font-size-xl: clamp(1.3rem, 4vw, 1.5rem);
-  --font-size-2xl: clamp(1.75rem, 3vw, 2rem);
+  --font-size-xs: 0.7rem;
+  --font-size-sm: 0.8rem;
+  --font-size-md: 0.9rem;
+  --font-size-lg: 1rem;
+  --font-size-xl: 1.2rem;
+  --font-size-2xl: 1.5rem;
 
   /* Padding */
+  --pad-xs: 0.2rem;
   --pad-sm: 0.4rem;
   --pad-md: 0.6rem;
   --pad-lg: 0.8rem;
@@ -48,10 +47,12 @@
 
 
   /* Icons */
+  --icon-xs: 12px;
   --icon-sm: 16px;
   --icon-md: 20px;
   --icon-lg: 24px;
   --icon-xl: 28px;
+  --icon-2xl: 32px;
 
   /*  States */
   --hover-opacity: 0.75;

@@ -1,3 +1,4 @@
+@import "../../styles/breakpoints.css";
 .container {
     display: flex;
     flex-direction: column;
@@ -17,20 +18,20 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (--laptop) {
     .main {
         padding: 0 10px;
     }
 }
 
-@media (max-width: 768px) {
+@media (--tablet) {
     .main {
         padding: 0 10px;
     }
 }
 
-@media (max-width: 600px) {
+@media (--mobile) {
     .main {
-        padding: 0 20px;
+        padding: 0 10px;
     }
 }

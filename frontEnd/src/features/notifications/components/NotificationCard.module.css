@@ -1,3 +1,4 @@
+@import "../../../styles/breakpoints.css";
 .notification {
   background: var(--surface-card);
   border: 1px solid var(--border-subtle);
@@ -115,7 +116,7 @@
   background: var(--surface-error);
 }
 
-@media (max-width: 640px) {
+@media (--mobile) {
   .notification {
     flex-wrap: wrap;
     gap: var(--gap-md);

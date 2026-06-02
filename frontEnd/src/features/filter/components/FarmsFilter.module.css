@@ -1,3 +1,4 @@
+@import "../../../styles/breakpoints.css";
 .container {
   padding: var(--pad-lg);
   background-color: var(--surface-card);
@@ -132,7 +133,7 @@
   flex: 1;
 }
 
-@media (max-width: 768px) {
+@media (--tablet) {
   .container {
     position: static;
     margin-bottom: 20px;

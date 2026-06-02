@@ -1,3 +1,4 @@
+@import "../../../styles/breakpoints.css";
 .container {
   position: relative;
   display: flex;
@@ -147,7 +148,7 @@
   text-decoration: underline;
 }
 
-@media (max-width: 480px) {
+@media (--mobile-sm) {
   .dropdown {
     position: fixed;
     top: 80px;

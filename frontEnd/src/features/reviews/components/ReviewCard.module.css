@@ -1,3 +1,4 @@
+@import "../../../styles/breakpoints.css";
 .card {
   display: flex;
   flex-direction: column;
@@ -61,7 +62,7 @@
   font-style: normal;
 }
 
-@media (max-width: 540px) {
+@media (--mobile-sm) {
   .header {
     flex-direction: column;
   }

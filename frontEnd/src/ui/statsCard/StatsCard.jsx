@@ -1,11 +1,11 @@
 import styles from "./StatsCard.module.css";
 
-export default function StatsCard({ label, value, hint, icon: Icon, color = "blue" }) {
+export default function StatsCard({ label, value, hint, icon: Icon, fillIcon = true, color = "blue" }) {
   return (
     <div className={`${styles.card} ${styles[color]}`}>
       <div className={styles.header}>
         <div className={styles.iconContainer}>
-          <Icon className={styles.icon} />
+          <Icon className={`${styles.icon} ${fillIcon ? styles.fill : ""}`} />
         </div>
       </div>
       <div className={styles.body}>

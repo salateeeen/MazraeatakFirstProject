@@ -1,3 +1,4 @@
+@import "../../../styles/breakpoints.css";
 .page {
     display: flex;
     flex-direction: column;
@@ -44,7 +45,7 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (--laptop) {
     .topGrid {
         grid-template-columns: 1fr 1fr;
     }
@@ -60,7 +61,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (--mobile) {
     .topGrid {
         grid-template-columns: 1fr;
     }

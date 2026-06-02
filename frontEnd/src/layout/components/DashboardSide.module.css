@@ -1,3 +1,4 @@
+@import "../../styles/breakpoints.css";
 .sidebar {
   width: 260px;
   background-color: var(--surface-panel);
@@ -109,7 +110,7 @@
   list-style: none;
 }
 
-@media (max-width: 1024px) {
+@media (--laptop) {
   .sidebar {
     position: fixed;
     transform: translateX(-100%);

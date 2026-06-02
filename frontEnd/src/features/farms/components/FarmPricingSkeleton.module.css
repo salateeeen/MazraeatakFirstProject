@@ -1,3 +1,4 @@
+@import "../../../styles/breakpoints.css";
 /* Local layout: mirrors FarmPricing (card, title, blocks, block, slots, slot, price) */
 .card {
   padding: var(--pad-xl);
@@ -60,7 +61,7 @@
   border-radius: var(--radius-sm);
 }
 
-@media (max-width: 768px) {
+@media (--tablet) {
   .blocks {
     grid-template-columns: 1fr;
   }

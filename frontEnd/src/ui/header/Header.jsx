@@ -12,6 +12,7 @@ import ResultFarmsName from "@/features/farms/components/ResultFarmsName";
 import NotificationBell from "@/features/notifications/components/NotificationBell";
 import { useSelector } from "react-redux";
 import { selectIsAuthenticated } from "@/features/user/userSlice";
+import Title from "../title/Title";
 
 export default function Header() {
   
@@ -57,11 +58,11 @@ export default function Header() {
   }
 
   return (
-    <div className={`${styles.header} ${!isHome ? styles.isNotHome : ""}`}>
+    <header className={`${styles.header} ${!isHome ? styles.isNotHome : ""}`}>
       <div onClick={handleLogo} className={styles.logo}>
         <MdOutlineVilla className={styles.icon} />
       </div>
-      <h1>Mazraeatak</h1>
+      <h1 className={styles.name}>Mazraeatak</h1>
 
       <FormProvider {...searchForm}>
         <form>
@@ -97,7 +98,7 @@ export default function Header() {
           </div>
         )}
       </div>
-    </div>
+    </header>
   );
 }
 

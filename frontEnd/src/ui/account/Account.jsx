@@ -52,6 +52,11 @@ export default function Account() {
     setIsOpen((prev) => !prev);
   }
 
+  function handleChangeProfilePicture() {
+    setChangeProfileOpen(true);
+    setIsOpen(false);
+  }
+
   function handleLogout() {
     dispatch(logout());
     navigate("/login");
@@ -101,7 +106,7 @@ export default function Account() {
               <UserAvatar user={userData} size="md" showName={false}>
                 <div
                   className={styles.overlay}
-                  onClick={() => setChangeProfileOpen(true)}
+                  onClick={handleChangeProfilePicture}
                 >
                   <LuCamera size={24} />
                 </div>

@@ -1,0 +1,28 @@
+@import "../../../styles/breakpoints.css";
+.statsSection {
+  margin-top: var(--gap-3xl);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap-2xl);
+}
+
+
+@media (--tablet) {
+  .statsSection {
+    margin-top: var(--gap-2xl);
+  }
+
+  .statsGrid {
+    gap: var(--gap-lg);
+  }
+}
+
+@media (--mobile-sm) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--gap-md);
+  }
+}

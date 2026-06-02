@@ -1,3 +1,4 @@
+@import "../../../styles/breakpoints.css";
 .authContainer {
     display: flex;
     min-height: 100vh;
@@ -98,7 +99,7 @@
 }
 
 /* Responsiveness */
-@media (max-width: 1024px) {
+@media (--laptop) {
     .leftSide {
         display: none;
     }
@@ -109,7 +110,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (--tablet) {
     .rightSide {
         padding: var(--gap-xl);
     }

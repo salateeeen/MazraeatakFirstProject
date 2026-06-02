@@ -1,17 +1,18 @@
+@import "../../../styles/breakpoints.css";
 .cards {
   display: flex;
   gap: 1rem;
   width: 100%;
 }
 
-@media (max-width: 1024px) {
+@media (--laptop) {
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 600px) and (max-width: 768px) {
+@media (min-width:  var(--bp-mobile)) and (max-width:  var(--bp-tablet)) {
   .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -25,7 +26,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (--mobile) {
   .cards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

@@ -1,3 +1,4 @@
+@import "../../styles/breakpoints.css";
 .header {
   display: flex;
   align-items: center;
@@ -79,7 +80,7 @@
   border: 2px solid var(--surface-card);
 }
 
-@media (max-width: 1024px) {
+@media (--laptop) {
   .menuBtn {
     display: flex;
   }
