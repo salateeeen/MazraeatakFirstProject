@@ -14,7 +14,7 @@ app.set("query parser", "extended");
 
 dotenv.config({ path: `./config.env` });
 
-startBookingJobs();
+// startBookingJobs();
 
 
 const adminRouter = require(`./routers/adminRouter`);
@@ -43,8 +43,6 @@ app.use('/api/v1/notifications', notificationsRouter);
 app.use('/api/v1/owners', ownersRouter);
 app.use('/api/v1/admin', adminRouter);
 
-
-
 app.use((req, res, next) => {
   next(new AppError(`This url ${req.originalUrl} is not found.`, 404));
 });
@@ -52,7 +50,7 @@ app.use((req, res, next) => {
 app.use(errorsController);
 
 const runApp = function () {
-  app.listen(3000, () => console.log(`Example app listening on port 3000!`));
+  app.listen(3800, () => console.log(`Mazraeatak app listening on port 3800!`));
 }
 
 connectDB(runApp);

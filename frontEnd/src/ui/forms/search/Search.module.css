@@ -1,7 +1,6 @@
 @import "../../../styles/breakpoints.css";
 .container {
   position: relative;
-  width: 300px;
 }
 
 .container .search {
@@ -84,10 +83,21 @@
   height: 100px;
 }
 
+@media (--desktop-lg) {
+  .container {
+    width: 300px;
+  }
+}
+
+@media (--desktop) {
+  .container {
+    width: 300px;
+  }
+}
 
 @media (--laptop) {
   .container {
-    width: 350px;
+    width: 300px;
   }
 }
 
@@ -97,9 +107,14 @@
   }
 }
 
+@media (--mobile) {
+  .container {
+    width: 200px;
+  }
+}
 
 @media (--mobile-sm) {
   .container {
-    width: 200px;
+    width: 175px;
   }
 }
